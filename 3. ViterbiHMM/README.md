@@ -1,6 +1,6 @@
-#Introduction to Probabilistic Map Matching (Viterbi)
+# Introduction to Probabilistic Map Matching (Viterbi)
 
-##Algorithm Description
+## Algorithm Description
 https://github.com/mapillary/map_matching
 
 `map_matching` is a Python library that associates a sequence of
@@ -10,11 +10,11 @@ relations. The library provides a simple interface for use, and above
 that it is also intended to work nicely with PostGIS and OSM road
 network to build real-world applications.
 
-##Publications
+## Publications
 
-#Run the Probabilistic Map Matching (Viterbi) Algorithm 
+# Run the Probabilistic Map Matching (Viterbi) Algorithm 
 
-#Licensing
+# Licensing
 `map_matching` is under BSD license. See `LICENSE` file for full
 license text.
 
