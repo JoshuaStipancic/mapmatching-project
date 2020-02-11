@@ -1,4 +1,4 @@
-#Introduction the the MapMatching Project
+# Introduction the the MapMatching Project
 
 Location-Based Services (LBS) in land navigation systems rely mostly on global positioning and global navigation satellite systems
  (referred to as GPS/GNSS) in smartphones for providing accurate and robust navigational solutions. However, GPS/GNSS accuracy is 
@@ -12,7 +12,7 @@ Location-Based Services (LBS) in land navigation systems rely mostly on global p
  iii) FIS-based advanced MM, and 
  iv) topological map matching (TMM) methods. 
 
-#General Steps for Generating Map Matching Results
+# General Steps for Generating Map Matching Results
 
 1) For each of Algorithms 1-5, navigate to the "Code" folder.
 
