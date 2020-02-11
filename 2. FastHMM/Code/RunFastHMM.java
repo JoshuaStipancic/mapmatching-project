@@ -37,10 +37,10 @@ import java.io.FileWriter;
 public class RunFastHMM {
 
 	private List<String> files = new ArrayList();
+	
 	  public static void main(String[] args) throws Exception {
-	    
 	    // Read all files from the data folder
-	    File folder = new File("../../Test");
+	    File folder = new File("../../Data");
 	    
 	    // List all files from the folder
       RunFastHMM listFiles = new RunFastHMM();
@@ -48,14 +48,15 @@ public class RunFastHMM {
 	  }
 	  
 	  public void listAllFiles(File folder) throws Exception {
-	    File[] fileNames = folder.listFiles();
-	    
 	    // Loop though all files in the data folder
+	    File[] fileNames = folder.listFiles();
 	    for(File file : fileNames) {
+	      
       	  try {
 	          if(file.isDirectory()) {
 	            listAllFiles(file);
 	          }
+	          
 	          else {
 	            // Loop through the four routing algorithms
 	            String[] algos = {"astar", "astarbi", "dijkstra", "dijkstrabi"};
@@ -75,7 +76,7 @@ public class RunFastHMM {
                 
                 // Format file names
   	          	String str1 = file.toPath().toString();
-  	          	String str2= str1.replace("../../Test/", "");
+  	          	String str2= str1.replace("../../Data/", "");
                 String str3 = str2.substring(0,str2.lastIndexOf("/"));
                 String str4 = str2.replace(".gpx", ".txt");	          	
   	          	
@@ -92,21 +93,9 @@ public class RunFastHMM {
   	          	double endTime = System.currentTimeMillis();
   	          	double totalTime = (endTime - startTime)/1000;
   							
-  							// Output GPX file										
-  	          	//GPXFile gpxFile = new GPXFile(mr, null);
+  	          	// Create the results directory, if needed
                 File  f = new File("../TestResults - " + algorithm +"/" + str3);
                 f.mkdirs();
-  	          	//gpxFile.doExport("../TestResults - " + algorithm +"/" + str2);
-  	          	
-  	          	// Generate data for text file
-  	          	List<EdgeMatch> matches = mr.getEdgeMatches();
-  	          	matches.get(0).getEdgeState();
-  	          	
-  	          	// Output text file
-  	          	//PrintStream PrintStream = new PrintStream(new FileOutputStream("../TestResults - " + algorithm +"/" + str4));
-  	          	//System.setOut(PrintStream);																		
-  	          	//System.out.println(matches);
-  	          	//PrintStream.close();
   	          	
   	          	// Output run time
   	          	String str5 = str4.replace(".txt","_time.txt");
@@ -115,26 +104,25 @@ public class RunFastHMM {
   	          	System.out.println(totalTime);
   	          	PPrintStream.close();
   
-                // Format output
-                //for (edge : mr.getEdgeMatches()){
-                //    int edgeId = edge.getEdge();
-                //    String vInfo = "";
-                //    if (edge instanceof VirtualEdgeIteratorState) {
-                //        // first, via and last edges can be virtual
-                //        VirtualEdgeIteratorState vEdge = (VirtualEdgeIteratorState) edge;
-                //        edgeId = vEdge.getOriginalTraversalKey() / 2;
-                //        vInfo = "v";
-                //    }
-                
+                // Generate list of edge matches
+  	          	List<EdgeMatch> matches = mr.getEdgeMatches();
+  	          	matches.get(0).getEdgeState();
+  	
+  	            // Initiate comparison variables
                 List edgeList = new ArrayList<Integer>();
                 long link1 = 0;
                 long link2 = 0;
-                FileWriter csvWriter = new FileWriter("../TestResults - " + algorithm +"/" + str4.replace(".txt", ".csv"));
+                
+                // Open filewriter for output csv
+                FileWriter csvWriter = new FileWriter("../Results - " + algorithm +"/" + str4.replace(".txt", ".csv"));
 
+                // Loop through each edge match, converting from internal GraphHopper ID to OSM ID
                 for(EdgeMatch em:matches){
+                  
 	                EdgeIteratorState edge = em.getEdgeState();
 	                int edgeId = edge.getEdge();
                   String vInfo = "";
+                  
                   if (edge instanceof VirtualEdgeIteratorState) {
                     // first, via and last edges can be virtual
                     VirtualEdgeIteratorState vEdge = (VirtualEdgeIteratorState) edge;
@@ -142,28 +130,23 @@ public class RunFastHMM {
                     vInfo = "v";
                   }
                   
+                  // Convert to OSM ID
                   link2 = hopper.getOSMWay(edgeId);
+                  
+                  // If the current link is different from the previous link, add the current link to the output list
                   if (link1 != link2){
                     csvWriter.append(Long.toString(link2));
                     csvWriter.append("\n");
                   }
                   link1=link2;
-                
-                
-
                 }
                 csvWriter.flush();
                 csvWriter.close();
-                //PrintStream PPPrintStream = new PrintStream(new FileOutputStream("../TestResults - " + algorithm +"/" + str4));
-  	          	//System.setOut(PPPrintStream);	
-  	          	//System.out.println(edgeList);
-  	          	//PPPrintStream.close();
-  
               }
   	        }
 	        } 
 	        catch(Exception e) {
-	   		  } continue;
+	   		} continue;
      }
 	 }
 }	 
