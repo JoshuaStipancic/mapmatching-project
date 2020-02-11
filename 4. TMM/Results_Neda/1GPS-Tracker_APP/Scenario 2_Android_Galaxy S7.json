@@ -1,0 +1,24 @@
+{
+  "options": {
+    "output.linkGeometries": true,
+    "output.linkMatchingError": true,
+    "output.waypointsIds": true,
+    "output.waypoints": true,
+    "output.groupByWays": true,
+    "output.osmProjection": false
+  },
+  "performanceIndicators": {
+    "completionMillis": 8,
+    "numPoints": 0,
+    "meanErr": "NaN",
+    "stdErr": "NaN",
+    "numRoutes": 0,
+    "numLinks": 0,
+    "totalLength": 0,
+    "totalTime": 0,
+    "network": "canada"
+  },
+  "diary": {
+    "entries": []
+  }
+}

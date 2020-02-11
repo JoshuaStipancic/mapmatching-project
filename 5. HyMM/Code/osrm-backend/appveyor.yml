@@ -1,0 +1,35 @@
+environment:
+  matrix:
+  - configuration: Release
+#  - configuration: Debug
+
+install:
+  - ps: Install-Product node 6
+
+# scripts that are called at very beginning, before repo cloning
+init:
+  - git config --global core.autocrlf input
+
+os: Visual Studio 2015
+
+# clone directory
+clone_folder: c:\projects\osrm
+
+platform: x64
+
+build_script:
+  - CALL appveyor-build.bat
+
+before_test:
+  - node --version
+  - npm --version
+  - npm install --ignore-scripts
+  - npm link --ignore-scripts
+  - SET PATH=%CD%\osrm-deps\libs\bin;%PATH%
+  - SET OSRM_BUILD_DIR=build\%Configuration%
+  - npm test
+
+branches:
+  only:
+    - master
+

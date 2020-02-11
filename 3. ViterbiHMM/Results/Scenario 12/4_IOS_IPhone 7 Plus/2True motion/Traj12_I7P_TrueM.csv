@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "map_matching/map_matcher.py", line 248, in <module>
+    sys.exit(main(sys.argv[1:]))
+  File "map_matching/map_matcher.py", line 216, in main
+    candidates = map_match(conn, road_table_name, sequence, search_radius, max_route_distance)
+  File "map_matching/map_matcher.py", line 191, in map_match
+    return list(matcher.offline_match(candidates))
+  File "/Users/stipancicjosh/mapmatching-project/3. ViterbiHMM/Code/map_matching/map_matching.py", line 182, in offline_match
+    winners = list(self.offline_search(candidates))
+  File "/Users/stipancicjosh/mapmatching-project/3. ViterbiHMM/Code/map_matching/viterbi_path.py", line 244, in offline_search
+    for winner, scanned_candidates, new_start in self.search_winners(states):
+  File "/Users/stipancicjosh/mapmatching-project/3. ViterbiHMM/Code/map_matching/viterbi_path.py", line 217, in search_winners
+    candidate.body, [c.body for c in next_state])
+  File "/Users/stipancicjosh/mapmatching-project/3. ViterbiHMM/Code/map_matching/map_matching.py", line 150, in calculate_transition_costs
+    max_path_cost=max_route_distance)
+  File "/Users/stipancicjosh/mapmatching-project/3. ViterbiHMM/Code/map_matching/road_routing.py", line 359, in road_network_route_many
+    return sp.find_many_shortest_paths(source_node, target_nodes, _get_edges, max_path_cost)
+  File "/Users/stipancicjosh/mapmatching-project/3. ViterbiHMM/Code/map_matching/shortest_path.py", line 131, in find_many_shortest_paths
+    adj_cost_sofar = cost_sofar + adj_edge.cost
+KeyboardInterrupt

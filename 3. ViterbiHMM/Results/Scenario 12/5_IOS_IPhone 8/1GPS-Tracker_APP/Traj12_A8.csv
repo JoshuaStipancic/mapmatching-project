@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "map_matching/map_matcher.py", line 248, in <module>
+    sys.exit(main(sys.argv[1:]))
+  File "map_matching/map_matcher.py", line 216, in main
+    candidates = map_match(conn, road_table_name, sequence, search_radius, max_route_distance)
+  File "map_matching/map_matcher.py", line 191, in map_match
+    return list(matcher.offline_match(candidates))
+  File "/Users/stipancicjosh/mapmatching-project/3. ViterbiHMM/Code/map_matching/map_matching.py", line 182, in offline_match
+    winners = list(self.offline_search(candidates))
+  File "/Users/stipancicjosh/mapmatching-project/3. ViterbiHMM/Code/map_matching/viterbi_path.py", line 244, in offline_search
+    for winner, scanned_candidates, new_start in self.search_winners(states):
+  File "/Users/stipancicjosh/mapmatching-project/3. ViterbiHMM/Code/map_matching/viterbi_path.py", line 214, in search_winners
+    next_state = next(states)
+  File "/Users/stipancicjosh/mapmatching-project/3. ViterbiHMM/Code/map_matching/viterbi_path.py", line 84, in next
+    item = next(self.iterator)
+  File "/Users/stipancicjosh/mapmatching-project/3. ViterbiHMM/Code/map_matching/viterbi_path.py", line 67, in _wrap_candidates
+    for candidate in candidates]
+  File "map_matching/map_matcher.py", line 160, in query_candidates
+    measurement = Measurement(id=mid, lon=mlon, lat=mlat)
+KeyboardInterrupt
