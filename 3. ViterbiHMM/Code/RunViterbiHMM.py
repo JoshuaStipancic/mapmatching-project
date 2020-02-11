@@ -38,7 +38,7 @@ for file in glob.glob("../../Data/*/*/*/*.gpx"):
   
   # Formate output filename
   pathTooSequence = pathToSequence.replace(" ", "\ ")
-  pathToOutput = pathTooSequence.replace('sequence.txt',newName+"_full.csv") #DELETE "_FULL.CSV" HERE TO REMOVE FULL FILE
+  pathToOutput = pathTooSequence.replace('sequence.txt',newName+"_full.csv")
   
   # Run the map matching algorithm (algorithm output will be reformatted below)
   start = time.time()
@@ -67,7 +67,7 @@ for file in glob.glob("../../Data/*/*/*/*.gpx"):
     i = i + 1
 
   # Write the formatted output to a file
-  populate.write(pathToResults.replace("_full",""),results_new) #DELETE ".REPLACE("_FULL.CSV","")" HERE TO REMOVE FULL FILE
+  populate.write(pathToResults.replace("_full",""),results_new)
   
   # Delete sequence file  
   os.remove(pathToSequence)

@@ -38,77 +38,77 @@ public class RunFastHMM {
 
 	private List<String> files = new ArrayList();
 	
-	  public static void main(String[] args) throws Exception {
-	    // Read all files from the data folder
-	    File folder = new File("../../Data");
+    public static void main(String[] args) throws Exception {
+      // Read all files from the data folder
+      File folder = new File("../../Data");
 	    
-	    // List all files from the folder
+      // List all files from the folder
       RunFastHMM listFiles = new RunFastHMM();
-	    listFiles.listAllFiles(folder);
-	  }
+      listFiles.listAllFiles(folder);
+    }
 	  
-	  public void listAllFiles(File folder) throws Exception {
-	    // Loop though all files in the data folder
-	    File[] fileNames = folder.listFiles();
-	    for(File file : fileNames) {
+    public void listAllFiles(File folder) throws Exception {
+      // Loop though all files in the data folder
+      File[] fileNames = folder.listFiles();
+      for(File file : fileNames) {
 	      
-      	  try {
-	          if(file.isDirectory()) {
-	            listAllFiles(file);
-	          }
+        try {
+          if(file.isDirectory()) {
+            listAllFiles(file);
+          }
 	          
-	          else {
-	            // Loop through the four routing algorithms
-	            String[] algos = {"astar", "astarbi", "dijkstra", "dijkstrabi"};
-	            for(String algorithm : algos) {
-  	         	  files.add(file.toPath().toString());
+            else {
+              // Loop through the four routing algorithms
+              String[] algos = {"astar", "astarbi", "dijkstra", "dijkstrabi"};
+              for(String algorithm : algos) {
+                files.add(file.toPath().toString());
   	         	  
-  	         	  // Initiate an instance of Graphhopper, set location of OSM data, set parameters
-  	         	  MyGraphHopper hopper = new MyGraphHopper();
-  	          	hopper.setDataReaderFile("hopper/montreal-latest.osm.pbf");
-  	          	hopper.setGraphHopperLocation("hopper/");
-  	          	CarFlagEncoder encoder = new CarFlagEncoder();
-  	          	hopper.setEncodingManager(new EncodingManager(encoder));
-  	          	hopper.getCHFactoryDecorator().setEnabled(false);
-  	          	hopper.importOrLoad();
-  	          	Weighting weighting = new FastestWeighting(encoder);
-  	          	AlgorithmOptions algoOptions = new AlgorithmOptions(algorithm, weighting);
+                // Initiate an instance of Graphhopper, set location of OSM data, set parameters
+                MyGraphHopper hopper = new MyGraphHopper();
+                hopper.setDataReaderFile("hopper/montreal-latest.osm.pbf");
+                hopper.setGraphHopperLocation("hopper/");
+                CarFlagEncoder encoder = new CarFlagEncoder();
+                hopper.setEncodingManager(new EncodingManager(encoder));
+                hopper.getCHFactoryDecorator().setEnabled(false);
+                hopper.importOrLoad();
+                Weighting weighting = new FastestWeighting(encoder);
+                AlgorithmOptions algoOptions = new AlgorithmOptions(algorithm, weighting);
                 
                 // Format file names
-  	          	String str1 = file.toPath().toString();
-  	          	String str2= str1.replace("../../Data/", "");
+                String str1 = file.toPath().toString();
+                String str2= str1.replace("../../Data/", "");
                 String str3 = str2.substring(0,str2.lastIndexOf("/"));
                 String str4 = str2.replace(".gpx", ".txt");	          	
   	          	
-  	          	double startTime = System.currentTimeMillis();
+                double startTime = System.currentTimeMillis();
   	          	
-  	          	// Run the map matching procedure
-  	          	MapMatching mapMatching = new MapMatching(hopper, algoOptions);
-  	          	mapMatching.setMeasurementErrorSigma(10);
+                // Run the map matching procedure
+                MapMatching mapMatching = new MapMatching(hopper, algoOptions);
+                mapMatching.setMeasurementErrorSigma(10);
   
-  	          	List<GPXEntry> inputGPXEntries = new GPXFile().doImport(str1).getEntries();
-  	          	MatchResult mr = mapMatching.doWork(inputGPXEntries);
+                List<GPXEntry> inputGPXEntries = new GPXFile().doImport(str1).getEntries();
+                MatchResult mr = mapMatching.doWork(inputGPXEntries);
   	          	
-  	          	// Calculate run time
-  	          	double endTime = System.currentTimeMillis();
-  	          	double totalTime = (endTime - startTime)/1000;
+                // Calculate run time
+                double endTime = System.currentTimeMillis();
+                double totalTime = (endTime - startTime)/1000;
   							
-  	          	// Create the results directory, if needed
-                File  f = new File("../TestResults - " + algorithm +"/" + str3);
+                // Create the results directory, if needed
+                File  f = new File("../Results - " + algorithm +"/" + str3);
                 f.mkdirs();
   	          	
-  	          	// Output run time
-  	          	String str5 = str4.replace(".txt","_time.txt");
-  	          	PrintStream PPrintStream = new PrintStream(new FileOutputStream("../TestResults - " + algorithm +"/" + str5));
-  	          	System.setOut(PPrintStream);																		
-  	          	System.out.println(totalTime);
-  	          	PPrintStream.close();
+                // Output run time
+                String str5 = str4.replace(".txt","_time.txt");
+                PrintStream PPrintStream = new PrintStream(new FileOutputStream("../Results - " + algorithm +"/" + str5));
+                System.setOut(PPrintStream);																		
+                System.out.println(totalTime);
+                PPrintStream.close();
   
                 // Generate list of edge matches
-  	          	List<EdgeMatch> matches = mr.getEdgeMatches();
-  	          	matches.get(0).getEdgeState();
+                List<EdgeMatch> matches = mr.getEdgeMatches();
+                matches.get(0).getEdgeState();
   	
-  	            // Initiate comparison variables
+                // Initiate comparison variables
                 List edgeList = new ArrayList<Integer>();
                 long link1 = 0;
                 long link2 = 0;
@@ -119,8 +119,8 @@ public class RunFastHMM {
                 // Loop through each edge match, converting from internal GraphHopper ID to OSM ID
                 for(EdgeMatch em:matches){
                   
-	                EdgeIteratorState edge = em.getEdgeState();
-	                int edgeId = edge.getEdge();
+                  EdgeIteratorState edge = em.getEdgeState();
+                  int edgeId = edge.getEdge();
                   String vInfo = "";
                   
                   if (edge instanceof VirtualEdgeIteratorState) {
@@ -143,10 +143,10 @@ public class RunFastHMM {
                 csvWriter.flush();
                 csvWriter.close();
               }
-  	        }
-	        } 
-	        catch(Exception e) {
-	   		} continue;
-     }
-	 }
+            }
+          } 
+          catch(Exception e) {
+        } continue;
+      }
+    }
 }	 
