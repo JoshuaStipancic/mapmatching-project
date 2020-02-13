@@ -1,30 +1,23 @@
 # Introduction to Probabilistic Map Matching (Fast)
 
 ## Algorithm Description
-Map Matching using a "Fast Hidden Markov Model" (FHMM) Algorithm
+This algorithm provides map matching using a "fast" Hidden Markov Model" (HMM) method. This algorithm adopts a modified version of *GraphHopper* created by Peter Karich. The algorithm implements both the GraphHopper routing engine (https://github.com/graphhopper/graphhopper) and map matching procedures (https://github.com/graphhopper/map-matching/). GraphHopper improves computational times over conventional HMM algorithms by implementing one of several shortest path algorithms. The four considered in this code are:
 
-This code is a modified version of "GraphHopper" created by Peter Karich.
-
-Five main algorithms in this code are as follows:
-- Dijestra
-- Bidirectional Dijestra
-- A*
-- Bidirectional A*
-- Alternative routing
-
-You can find the main source: https://github.com/graphhopper/graphhopper
-https://github.com/graphhopper/map-matching/
-It is a fast and memory efficient Java routing engine, released under Apache.
-It is uses Open Street Map and GTFS data. 
+* A-STAR
+* Bidirectional A-STAR
+* Dijkstra
+* Bidirectional Dijkstra
 
 ## Publications
-The algorithms are used in this package designed by Hannes Koller in "Fast Hidden Markov Model MapMatching for Spare and Noisy Trajectories" published in 2015.
+Koller, H. Fast Hidden Markov Model MapMatching for Spare and Noisy Trajectories. *2015 IEEE 18th International Conference on Intelligent Transportation Systems*, 2015.
 
 # Run the Probabilistic Map Matching (Fast) Algorithm
- After installing "Grapphaer" and handdle it with "Appache" and "Maven" in Java, you can use the java file in "Code" folder.
-You can consider the GPS data in Data_GPXformat folder and the related results in "Results _All" folder as examples.
+1a. An archived version of *GraphHopper* (along with other required java classes) is provided (prebuilt) in the folder *Code/jar/*
+1b. Advanced users can download *GraphHopper* and *GraphHopper MapMatching* directly and built them using Maven. The code is designed to work with Version 0.10.
+2. Run the main algorithm file, *Code/RunFastHMM.java*.
+3. Results are stored in individual folders by routing algorithm name (i.e.*Results - astar/*).
 
 # Licensing
-
+*GraphHopper* is provided under the Apache License (https://www.apache.org/licenses/LICENSE-2.0).
 
 

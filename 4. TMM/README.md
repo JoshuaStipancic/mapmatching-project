@@ -1,21 +1,18 @@
 # Introduction to Topological Map Matching
 
 ## Algorithm Description
-
-This section presents a topological decision rule-based methodology that detects and solves spatial mismatches as GPS measurements are collected.
-There is few available services which use TMMin mapmatching and "TrackingMatching" is one of them. In the refrence paper you can find the details of the algorithm used in this TMM.
-TrackMatching performs the map-matching of location data (e.g. GPS/GPX tracks). The service is primarily intended for car data for now. The service is provided as a SaaS (“Software as a Service”) running on Amazon cloud platform.
-
-You can find "TrackingMatching" in https://mapmatching.3scale.net
+This algorithm provides map matching using a topological method. This algorithm is an implementation of the *TrackMatching* service by Fabrice Marchal (https://mapmatching.3scale.net/). *TrackMatching* uses a topological decision rule-based methodology that detects and solves spatial mismatches as GPS measurements are collected.
 
 ## Publications
-
+Marchal, F, J Hackney, and K W Axhausen. Efficient Map Matching of Large Global Positioning System Data Sets. *Transportation Research Record Journal of the Transportation Research Board*, Vol. 1935, 2005, pp 93-100.
 
 # Run the Topological Map Matching Algorithm
-TrackMatching uses a REST API accessible from scripts. The popular command-line tool "CURL" is used for running. A Node.js sample invocation is also provided below. To process a GPX file, we sould run the following command:
-
-curl -X POST -H 'Content-Type: application/gpx+xml' -H 'Accept: application/json' --data-binary @gpslog.gpx "http://test.roadmatching.com/rest/mapmatch/?app_id=YOUR_APPID&app_key=YOUR_APPKEY" -o output.json
+1. Create a TrackMatching account (https://mapmatching.3scale.net/signup) to generate a unique application ID and application key.
+2. Enter the application ID and application key in the first rows of the main algorithm script located at *Code/RunTMM.sh*.
+3. Run the main algorithm file, *Code/RunTMM.sh*.
+4. Results are stored in the folder *Results/*.
 
 # Licensing
+*TrackMatching* is provided as a SaaS (Software as a Service) running on the Amazon cloud platform.
 
 
