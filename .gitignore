@@ -2,6 +2,7 @@ Data - Molly/
 Data_backup/
 GIS Files/
 Test/
+Results_Neda/
 *.class
 *.pyc
 .DS_Store
