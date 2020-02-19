@@ -2,3 +2,8 @@ Data - Molly/
 Data_backup/
 GIS Files/
 Test/
+*.class
+*.pyc
+.DS_Store
+.RData
+.Rhistory
