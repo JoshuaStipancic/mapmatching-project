@@ -1,5 +1,5 @@
 # Read all gpx files from the data folder
-files="../../Data/*9/*/*/*.gpx"
+files="../../Data/*/*/*/*.gpx"
 
 # Loop through each file
 for f in $files
