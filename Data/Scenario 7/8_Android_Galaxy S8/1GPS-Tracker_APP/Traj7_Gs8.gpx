@@ -1,303 +1,308 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <gpx version="1.1" creator="GPS Visualizer https://www.gpsvisualizer.com/" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
-<wpt lat="45.522135" lon="-73.546892">
+<trk>
+<name>Traj7_Gs8</name>
+<trkseg>
+<trkpt lat="45.522135" lon="-73.546892">
   <ele>-6.5</ele>
   <time>2017-12-31T22:24:00Z</time>
   <name>2017-12-31 22:24:00</name>
-</wpt>
-<wpt lat="45.521686" lon="-73.547159">
+</trkpt>
+<trkpt lat="45.521686" lon="-73.547159">
   <ele>-8.8</ele>
   <time>2017-12-31T22:24:00Z</time>
   <name>2017-12-31 22:24:00</name>
-</wpt>
-<wpt lat="45.52131" lon="-73.547425">
+</trkpt>
+<trkpt lat="45.52131" lon="-73.547425">
   <ele>-9.2</ele>
   <time>2017-12-31T22:24:00Z</time>
   <name>2017-12-31 22:24:00</name>
-</wpt>
-<wpt lat="45.521031" lon="-73.547619">
+</trkpt>
+<trkpt lat="45.521031" lon="-73.547619">
   <ele>-10.3</ele>
   <time>2017-12-31T22:24:00Z</time>
   <name>2017-12-31 22:24:00</name>
-</wpt>
-<wpt lat="45.520912" lon="-73.547702">
+</trkpt>
+<trkpt lat="45.520912" lon="-73.547702">
   <ele>-10.3</ele>
   <time>2017-12-31T22:24:00Z</time>
   <name>2017-12-31 22:24:00</name>
-</wpt>
-<wpt lat="45.520885" lon="-73.547759">
+</trkpt>
+<trkpt lat="45.520885" lon="-73.547759">
   <ele>-13.0</ele>
   <time>2017-12-31T22:25:00Z</time>
   <name>2017-12-31 22:25:00</name>
-</wpt>
-<wpt lat="45.520651" lon="-73.547923">
+</trkpt>
+<trkpt lat="45.520651" lon="-73.547923">
   <ele>-12.9</ele>
   <time>2017-12-31T22:25:00Z</time>
   <name>2017-12-31 22:25:00</name>
-</wpt>
-<wpt lat="45.520284" lon="-73.548162">
+</trkpt>
+<trkpt lat="45.520284" lon="-73.548162">
   <ele>-13.2</ele>
   <time>2017-12-31T22:25:00Z</time>
   <name>2017-12-31 22:25:00</name>
-</wpt>
-<wpt lat="45.519867" lon="-73.54844">
+</trkpt>
+<trkpt lat="45.519867" lon="-73.54844">
   <ele>-14.0</ele>
   <time>2017-12-31T22:25:00Z</time>
   <name>2017-12-31 22:25:00</name>
-</wpt>
-<wpt lat="45.519402" lon="-73.548767">
+</trkpt>
+<trkpt lat="45.519402" lon="-73.548767">
   <ele>-13.9</ele>
   <time>2017-12-31T22:25:00Z</time>
   <name>2017-12-31 22:25:00</name>
-</wpt>
-<wpt lat="45.518899" lon="-73.549126">
+</trkpt>
+<trkpt lat="45.518899" lon="-73.549126">
   <ele>-14.0</ele>
   <time>2017-12-31T22:25:00Z</time>
   <name>2017-12-31 22:25:00</name>
-</wpt>
-<wpt lat="45.51839" lon="-73.549486">
+</trkpt>
+<trkpt lat="45.51839" lon="-73.549486">
   <ele>-14.0</ele>
   <time>2017-12-31T22:25:00Z</time>
   <name>2017-12-31 22:25:00</name>
-</wpt>
-<wpt lat="45.51779" lon="-73.549928">
+</trkpt>
+<trkpt lat="45.51779" lon="-73.549928">
   <ele>-14.1</ele>
   <time>2017-12-31T22:25:00Z</time>
   <name>2017-12-31 22:25:00</name>
-</wpt>
-<wpt lat="45.517137" lon="-73.550411">
+</trkpt>
+<trkpt lat="45.517137" lon="-73.550411">
   <ele>-13.7</ele>
   <time>2017-12-31T22:25:00Z</time>
   <name>2017-12-31 22:25:00</name>
-</wpt>
-<wpt lat="45.516559" lon="-73.550898">
+</trkpt>
+<trkpt lat="45.516559" lon="-73.550898">
   <ele>-13.4</ele>
   <time>2017-12-31T22:25:00Z</time>
   <name>2017-12-31 22:25:00</name>
-</wpt>
-<wpt lat="45.516002" lon="-73.551402">
+</trkpt>
+<trkpt lat="45.516002" lon="-73.551402">
   <ele>-17.0</ele>
   <time>2017-12-31T22:25:00Z</time>
   <name>2017-12-31 22:25:00</name>
-</wpt>
-<wpt lat="45.515287" lon="-73.552084">
+</trkpt>
+<trkpt lat="45.515287" lon="-73.552084">
   <ele>-19.3</ele>
   <time>2017-12-31T22:25:00Z</time>
   <name>2017-12-31 22:25:00</name>
-</wpt>
-<wpt lat="45.514495" lon="-73.552816">
+</trkpt>
+<trkpt lat="45.514495" lon="-73.552816">
   <ele>-18.8</ele>
   <time>2017-12-31T22:25:00Z</time>
   <name>2017-12-31 22:25:00</name>
-</wpt>
-<wpt lat="45.514021" lon="-73.553238">
+</trkpt>
+<trkpt lat="45.514021" lon="-73.553238">
   <ele>-18.3</ele>
   <time>2017-12-31T22:25:00Z</time>
   <name>2017-12-31 22:25:00</name>
-</wpt>
-<wpt lat="45.50843" lon="-73.55752">
+</trkpt>
+<trkpt lat="45.50843" lon="-73.55752">
   <ele>-17.2</ele>
   <time>2017-12-31T22:26:00Z</time>
   <name>2017-12-31 22:26:00</name>
-</wpt>
-<wpt lat="45.507763" lon="-73.558127">
+</trkpt>
+<trkpt lat="45.507763" lon="-73.558127">
   <ele>-18.6</ele>
   <time>2017-12-31T22:26:00Z</time>
   <name>2017-12-31 22:26:00</name>
-</wpt>
-<wpt lat="45.507073" lon="-73.558677">
+</trkpt>
+<trkpt lat="45.507073" lon="-73.558677">
   <ele>-20.4</ele>
   <time>2017-12-31T22:26:00Z</time>
   <name>2017-12-31 22:26:00</name>
-</wpt>
-<wpt lat="45.506554" lon="-73.559089">
+</trkpt>
+<trkpt lat="45.506554" lon="-73.559089">
   <ele>-17.6</ele>
   <time>2017-12-31T22:26:00Z</time>
   <name>2017-12-31 22:26:00</name>
-</wpt>
-<wpt lat="45.505825" lon="-73.559617">
+</trkpt>
+<trkpt lat="45.505825" lon="-73.559617">
   <ele>-17.4</ele>
   <time>2017-12-31T22:26:00Z</time>
   <name>2017-12-31 22:26:00</name>
-</wpt>
-<wpt lat="45.505223" lon="-73.560035">
+</trkpt>
+<trkpt lat="45.505223" lon="-73.560035">
   <ele>-17.6</ele>
   <time>2017-12-31T22:26:00Z</time>
   <name>2017-12-31 22:26:00</name>
-</wpt>
-<wpt lat="45.497535" lon="-73.563011">
+</trkpt>
+<trkpt lat="45.497535" lon="-73.563011">
   <ele>-23.8</ele>
   <time>2017-12-31T22:27:00Z</time>
   <name>2017-12-31 22:27:00</name>
-</wpt>
-<wpt lat="45.497606" lon="-73.5638">
+</trkpt>
+<trkpt lat="45.497606" lon="-73.5638">
   <ele>-19.6</ele>
   <time>2017-12-31T22:27:00Z</time>
   <name>2017-12-31 22:27:00</name>
-</wpt>
-<wpt lat="45.497537" lon="-73.563724">
+</trkpt>
+<trkpt lat="45.497537" lon="-73.563724">
   <ele>-18.1</ele>
   <time>2017-12-31T22:28:00Z</time>
   <name>2017-12-31 22:28:00</name>
-</wpt>
-<wpt lat="45.497568" lon="-73.563822">
+</trkpt>
+<trkpt lat="45.497568" lon="-73.563822">
   <ele>-13.0</ele>
   <time>2017-12-31T22:28:00Z</time>
   <name>2017-12-31 22:28:00</name>
-</wpt>
-<wpt lat="45.498006" lon="-73.563593">
+</trkpt>
+<trkpt lat="45.498006" lon="-73.563593">
   <ele>-9.7</ele>
   <time>2017-12-31T22:28:00Z</time>
   <name>2017-12-31 22:28:00</name>
-</wpt>
-<wpt lat="45.498494" lon="-73.56314">
+</trkpt>
+<trkpt lat="45.498494" lon="-73.56314">
   <ele>-6.8</ele>
   <time>2017-12-31T22:29:00Z</time>
   <name>2017-12-31 22:29:00</name>
-</wpt>
-<wpt lat="45.498824" lon="-73.562792">
+</trkpt>
+<trkpt lat="45.498824" lon="-73.562792">
   <ele>-8.6</ele>
   <time>2017-12-31T22:29:00Z</time>
   <name>2017-12-31 22:29:00</name>
-</wpt>
-<wpt lat="45.49894" lon="-73.562614">
+</trkpt>
+<trkpt lat="45.49894" lon="-73.562614">
   <ele>-7.7</ele>
   <time>2017-12-31T22:29:00Z</time>
   <name>2017-12-31 22:29:00</name>
-</wpt>
-<wpt lat="45.498617" lon="-73.562216">
+</trkpt>
+<trkpt lat="45.498617" lon="-73.562216">
   <ele>-5.8</ele>
   <time>2017-12-31T22:29:00Z</time>
   <name>2017-12-31 22:29:00</name>
-</wpt>
-<wpt lat="45.498173" lon="-73.561768">
+</trkpt>
+<trkpt lat="45.498173" lon="-73.561768">
   <ele>-8.3</ele>
   <time>2017-12-31T22:29:00Z</time>
   <name>2017-12-31 22:29:00</name>
-</wpt>
-<wpt lat="45.49782" lon="-73.561176">
+</trkpt>
+<trkpt lat="45.49782" lon="-73.561176">
   <ele>-10.1</ele>
   <time>2017-12-31T22:29:00Z</time>
   <name>2017-12-31 22:29:00</name>
-</wpt>
-<wpt lat="45.497478" lon="-73.560421">
+</trkpt>
+<trkpt lat="45.497478" lon="-73.560421">
   <ele>-13.0</ele>
   <time>2017-12-31T22:29:00Z</time>
   <name>2017-12-31 22:29:00</name>
-</wpt>
-<wpt lat="45.497101" lon="-73.55961">
+</trkpt>
+<trkpt lat="45.497101" lon="-73.55961">
   <ele>-13.3</ele>
   <time>2017-12-31T22:29:00Z</time>
   <name>2017-12-31 22:29:00</name>
-</wpt>
-<wpt lat="45.496917" lon="-73.559329">
+</trkpt>
+<trkpt lat="45.496917" lon="-73.559329">
   <ele>-12.6</ele>
   <time>2017-12-31T22:29:00Z</time>
   <name>2017-12-31 22:29:00</name>
-</wpt>
-<wpt lat="45.496725" lon="-73.559426">
+</trkpt>
+<trkpt lat="45.496725" lon="-73.559426">
   <ele>-12.2</ele>
   <time>2017-12-31T22:29:00Z</time>
   <name>2017-12-31 22:29:00</name>
-</wpt>
-<wpt lat="45.496338" lon="-73.559901">
+</trkpt>
+<trkpt lat="45.496338" lon="-73.559901">
   <ele>-13.0</ele>
   <time>2017-12-31T22:29:00Z</time>
   <name>2017-12-31 22:29:00</name>
-</wpt>
-<wpt lat="45.496239" lon="-73.559991">
+</trkpt>
+<trkpt lat="45.496239" lon="-73.559991">
   <ele>-15.3</ele>
   <time>2017-12-31T22:29:00Z</time>
   <name>2017-12-31 22:29:00</name>
-</wpt>
-<wpt lat="45.496013" lon="-73.560202">
+</trkpt>
+<trkpt lat="45.496013" lon="-73.560202">
   <ele>-16.1</ele>
   <time>2017-12-31T22:29:00Z</time>
   <name>2017-12-31 22:29:00</name>
-</wpt>
-<wpt lat="45.4958" lon="-73.560428">
+</trkpt>
+<trkpt lat="45.4958" lon="-73.560428">
   <ele>-14.8</ele>
   <time>2017-12-31T22:30:00Z</time>
   <name>2017-12-31 22:30:00</name>
-</wpt>
-<wpt lat="45.495519" lon="-73.560722">
+</trkpt>
+<trkpt lat="45.495519" lon="-73.560722">
   <ele>-12.0</ele>
   <time>2017-12-31T22:30:00Z</time>
   <name>2017-12-31 22:30:00</name>
-</wpt>
-<wpt lat="45.495333" lon="-73.560925">
+</trkpt>
+<trkpt lat="45.495333" lon="-73.560925">
   <ele>-12.1</ele>
   <time>2017-12-31T22:30:00Z</time>
   <name>2017-12-31 22:30:00</name>
-</wpt>
-<wpt lat="45.495031" lon="-73.561235">
+</trkpt>
+<trkpt lat="45.495031" lon="-73.561235">
   <ele>-10.4</ele>
   <time>2017-12-31T22:30:00Z</time>
   <name>2017-12-31 22:30:00</name>
-</wpt>
-<wpt lat="45.494966" lon="-73.561319">
+</trkpt>
+<trkpt lat="45.494966" lon="-73.561319">
   <ele>-11.7</ele>
   <time>2017-12-31T22:30:00Z</time>
   <name>2017-12-31 22:30:00</name>
-</wpt>
-<wpt lat="45.494879" lon="-73.561327">
+</trkpt>
+<trkpt lat="45.494879" lon="-73.561327">
   <ele>-12.3</ele>
   <time>2017-12-31T22:31:00Z</time>
   <name>2017-12-31 22:31:00</name>
-</wpt>
-<wpt lat="45.494566" lon="-73.561536">
+</trkpt>
+<trkpt lat="45.494566" lon="-73.561536">
   <ele>-13.6</ele>
   <time>2017-12-31T22:31:00Z</time>
   <name>2017-12-31 22:31:00</name>
-</wpt>
-<wpt lat="45.494283" lon="-73.561737">
+</trkpt>
+<trkpt lat="45.494283" lon="-73.561737">
   <ele>-11.1</ele>
   <time>2017-12-31T22:31:00Z</time>
   <name>2017-12-31 22:31:00</name>
-</wpt>
-<wpt lat="45.493883" lon="-73.561868">
+</trkpt>
+<trkpt lat="45.493883" lon="-73.561868">
   <ele>-10.1</ele>
   <time>2017-12-31T22:31:00Z</time>
   <name>2017-12-31 22:31:00</name>
-</wpt>
-<wpt lat="45.493592" lon="-73.562111">
+</trkpt>
+<trkpt lat="45.493592" lon="-73.562111">
   <ele>-10.3</ele>
   <time>2017-12-31T22:31:00Z</time>
   <name>2017-12-31 22:31:00</name>
-</wpt>
-<wpt lat="45.493305" lon="-73.562315">
+</trkpt>
+<trkpt lat="45.493305" lon="-73.562315">
   <ele>-11.6</ele>
   <time>2017-12-31T22:31:00Z</time>
   <name>2017-12-31 22:31:00</name>
-</wpt>
-<wpt lat="45.493062" lon="-73.562533">
+</trkpt>
+<trkpt lat="45.493062" lon="-73.562533">
   <ele>-13.8</ele>
   <time>2017-12-31T22:31:00Z</time>
   <name>2017-12-31 22:31:00</name>
-</wpt>
-<wpt lat="45.493078" lon="-73.562832">
+</trkpt>
+<trkpt lat="45.493078" lon="-73.562832">
   <ele>-16.3</ele>
   <time>2017-12-31T22:31:00Z</time>
   <name>2017-12-31 22:31:00</name>
-</wpt>
-<wpt lat="45.493273" lon="-73.56329">
+</trkpt>
+<trkpt lat="45.493273" lon="-73.56329">
   <ele>-18.7</ele>
   <time>2017-12-31T22:31:00Z</time>
   <name>2017-12-31 22:31:00</name>
-</wpt>
-<wpt lat="45.493187" lon="-73.563499">
+</trkpt>
+<trkpt lat="45.493187" lon="-73.563499">
   <ele>-18.0</ele>
   <time>2017-12-31T22:31:00Z</time>
   <name>2017-12-31 22:31:00</name>
-</wpt>
-<wpt lat="45.493102" lon="-73.563648">
+</trkpt>
+<trkpt lat="45.493102" lon="-73.563648">
   <ele>-12.9</ele>
   <time>2017-12-31T22:31:00Z</time>
   <name>2017-12-31 22:31:00</name>
-</wpt>
-<wpt lat="45.493091" lon="-73.563751">
+</trkpt>
+<trkpt lat="45.493091" lon="-73.563751">
   <ele>9.2</ele>
   <time>2017-12-31T22:43:00Z</time>
   <name>2017-12-31 22:43:00</name>
-</wpt>
+</trkpt>
+</trkseg>
+</trk>
 </gpx>

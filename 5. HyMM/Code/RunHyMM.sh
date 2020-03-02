@@ -2,7 +2,7 @@
 # osrm-backend/build/osrm-routed --algorithm=MLD osrm-backend/montreal-latest.osrm --max-matching-size=5000
 
 # Read all gpx files from the data folder
-files="../../Data/*/*/*/*.gpx"
+files="../../Data/*9/*/*/*.gpx"
 
 # Loop through each file
 for f in $files
