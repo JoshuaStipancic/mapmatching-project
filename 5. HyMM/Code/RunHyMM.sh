@@ -5,7 +5,7 @@
 files="../../Data/*/*/*/*.gpx"
 
 # Loop through each file
-for f in $files
+for f in $files;
   do
 
   # Format the directory name
@@ -23,7 +23,7 @@ for f in $files
   coords=
   
   # Loop through each line in a single file
-  while read -r line
+  while read -r line;
   do
     # Find all lines which contain longitude and latitude
     if [[ $line == *lat=* ]];
@@ -63,7 +63,7 @@ for f in $files
   # Read temporary file and format final output  
   declare -i i=1
   newLine=
-  while IFS=',' read -r f1 f2 f3 f4 f5 f6 f7 f8
+  while IFS=',' read -r f1 f2 f3 f4 f5 f6 f7 f8;
   do
     if [[ $f1 == *location* ]];
     then
@@ -80,8 +80,8 @@ for f in $files
   
   # Read the full output file and generate a list of only the OSM IDs
   declare -i i=1
-  osmIDs=
-  while IFS=',' read -r f1 f2 f3 f4
+  osmIDs=()
+  while IFS=',' read -r f1 f2 f3 f4;
   do
       osmIDs+=("$f4")
       i=$(( i + 1 ))
@@ -91,7 +91,7 @@ for f in $files
   # If the current link is different from the previous link, add the current link to the output list
   newLine=
   i=1
-  while [ $i -lt ${#osmIDs[@]} ]
+  while [ $i -lt ${#osmIDs[@]} ];
   do
     if [ "${osmIDs[i]}" != "${osmIDs[i+1]}" ]; then
       newLine=$newLine"${osmIDs[i]}"'\n'
