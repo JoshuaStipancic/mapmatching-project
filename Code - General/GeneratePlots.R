@@ -175,8 +175,5 @@ boxplot(time~phone,
         ylim = c(0,20))
 dev.off()
 
-ggplot(dataa[dataa$algorithm %in% c("AMM",  "FastHMM_AStar", "ViterbiHMM","TMM","HyMM") ,], aes(x=algorithm, y=accuracy, fill=scenario)) +
-geom_boxplot(outlier.shape = NA)
-
-ggplot(dataa[dataaa$algorithm %in% c("AMM",  "FastHMM_AStar", "ViterbiHMM","TMM","HyMM") ,], aes(x=algorithm, y=time, fill=scenario)) +
-  geom_boxplot(outlier.shape = NA)
+#ggplot(dataa[dataa$algorithm %in% c("AMM",  "FastHMM_AStar", "ViterbiHMM","TMM","HyMM") ,], aes(x=algorithm, y=accuracy, fill=scenario)) +
+#geom_boxplot(outlier.shape = NA)
