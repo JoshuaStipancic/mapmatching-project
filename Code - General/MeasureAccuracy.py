@@ -14,7 +14,7 @@ for file in glob.glob("../*/Results*/*/*/*/*.csv"):
     None
 
   else:
-    print file
+    # print file
 
     # Read and format the map matched data file
     matched = populate.read(file)
@@ -41,7 +41,10 @@ for file in glob.glob("../*/Results*/*/*/*/*.csv"):
     nFalse = len(tuple(matchedd))-nMatches
     
     accuracy = results.ratio()*100
-    false = float(nFalse)/len(tuple(truthh))*100
+    if len(tuple(matchedd)) > 0:
+      false = float(nFalse)/len(tuple(matchedd))*100
+    else:
+      false = 0
     missed = float(nMissed)/len(tuple(truthh))*100
 
 

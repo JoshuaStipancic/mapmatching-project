@@ -27,7 +27,7 @@ for(filename in Sys.glob("Code - General/AccuracyResults/*.csv"))
   
   # Read one file
   table <- read.csv(filename, header=F)
-  print(filename)
+  #print(filename)
   
   algo_name <- str_sub(filename,42,53) # get application name
   app_name <- str_sub(filename,-5,-5) # get application name
@@ -109,7 +109,7 @@ for(filename in Sys.glob("Code - General/MissedResults/*.csv"))
   
   # Read one file
   table <- read.csv(filename, header=F)
-  print(filename)
+  #print(filename)
   
   algo_name <- str_sub(filename,40,51) # get application name
   app_name <- str_sub(filename,-5,-5) # get application name
@@ -191,7 +191,7 @@ for(filename in Sys.glob("Code - General/FalseResults/*.csv"))
   
   # Read one file
   table <- read.csv(filename, header=F)
-  print(filename)
+  #print(filename)
   
   algo_name <- str_sub(filename,39,50) # get application name
   app_name <- str_sub(filename,-5,-5) # get application name
@@ -273,7 +273,7 @@ for(filename in Sys.glob("Code - General/TimeResults/*.csv"))
   
   # Read one file
   table <- read.csv(filename, header=F)
-  print(filename)
+  #print(filename)
   
   algo_name <- str_sub(filename,38,49) # get application name
   app_name <- str_sub(filename,-5,-5) # get application name
@@ -368,19 +368,18 @@ ggplot(fullData[fullData$algorithm %in% c("AMM",  "FastHMM_AStar", "FastHMM_ASta
   geom_point(alpha=0.6) +
   labs(title="Time vs Algorithm", x ="Time (s)", y = "Accuracy (%)", colour = "Algorithms") +
   theme(plot.title = element_text(hjust = 0.5)) +
-  scale_x_continuous(trans='log10')
+  scale_x_continuous(trans='log10') +
+  scale_colour_manual(values=c("#F8766D", "#CCCCCC", "#A3A500", "#00BF7D", "#00B0F6", "#E76BF3"))
 ggsave("Code - General/Plots/TimeVsAccuracy.pdf", width = 12, height = 7, units = "in")
 
-p4 <- ggplot(fullData[fullData$algorithm %in% c("AMM",  "FastHMM_AStar", "FastHMM_AStarBi", "ViterbiHMM","TMM","HyMM") ,], aes(x=accuracy, y=false, color=algorithm)) +
+p4 <- ggplot(fullData[fullData$algorithm %in% c("AMM", "FastHMM_AStarBi", "ViterbiHMM","TMM","HyMM") ,], aes(x=accuracy, y=false, color=algorithm)) +
       geom_point(alpha=0.6,size=1) +
       labs(title="False vs Accuracy", x ="Accuracy (%)", y = "False (%)", colour = "Algorithms") +
-      theme(plot.title = element_text(hjust = 0.5)) +
-      scale_y_continuous(trans='log10')
-p5 <- ggplot(fullData[fullData$algorithm %in% c("AMM",  "FastHMM_AStar", "FastHMM_AStarBi", "ViterbiHMM","TMM","HyMM") ,], aes(x=accuracy, y=missed, color=algorithm)) +
+      theme(plot.title = element_text(hjust = 0.5))
+p5 <- ggplot(fullData[fullData$algorithm %in% c("AMM", "FastHMM_AStarBi", "ViterbiHMM","TMM","HyMM") ,], aes(x=accuracy, y=missed, color=algorithm)) +
       geom_point(alpha=0.6, size=1) +
       labs(title="Missed vs Accuracy", x ="Accuracy (%)", y = "Missed (%)", colour = "Algorithms") +
-      theme(plot.title = element_text(hjust = 0.5)) +
-      scale_y_continuous(trans='log10')
+      theme(plot.title = element_text(hjust = 0.5)) 
 ggsave("Code - General/Plots/MissedAndFalseVsAccuracy.pdf", arrangeGrob(grobs=list(p4, p5),nrow=1,ncol=2), width = 12, height = 7, units = "in")
 
 
