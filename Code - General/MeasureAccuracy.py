@@ -35,10 +35,19 @@ for file in glob.glob("../*/Results*/*/*/*/*.csv"):
 
     # Determine the map matching accuracy
     results = difflib.SequenceMatcher(None, tuple(matchedd), tuple(truthh))
+
+    nMatches = sum([m.size for m in results.get_matching_blocks()])
+    nMissed = len(tuple(truthh))-nMatches
+    nFalse = len(tuple(matchedd))-nMatches
+    
     accuracy = results.ratio()*100
+    false = float(nFalse)/len(tuple(truthh))*100
+    missed = float(nMissed)/len(tuple(truthh))*100
+
 
     accuracyFile = open(file.replace('.csv','_accuracy.txt'),"w")
-    accuracyFile.write("%s" % accuracy)
+    accuracyFile.write("%s, %s, %s, %s, %s, %s" % (accuracy, missed, false, nMatches, len(tuple(truthh)), len(tuple(matched))))
+    #accuracyFile.write("%s" % accuracy)
     accuracyFile.close()
 
 

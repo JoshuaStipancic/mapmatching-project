@@ -84,11 +84,11 @@ public class RunFastHMM {
   	          	
                 // Run the map matching procedure
                 MapMatching mapMatching = new MapMatching(hopper, algoOptions);
-                mapMatching.setMeasurementErrorSigma(10);
+                //mapMatching.setMeasurementErrorSigma(10);
   
                 List<GPXEntry> inputGPXEntries = new GPXFile().doImport(str1).getEntries();
                 MatchResult mr = mapMatching.doWork(inputGPXEntries);
-  	          	
+                
                 // Calculate run time
                 double endTime = System.currentTimeMillis();
                 double totalTime = (endTime - startTime)/1000;
@@ -107,6 +107,11 @@ public class RunFastHMM {
                 // Generate list of edge matches
                 List<EdgeMatch> matches = mr.getEdgeMatches();
                 matches.get(0).getEdgeState();
+                
+                PrintStream QPrintStream = new PrintStream(new FileOutputStream("../Results - " + algorithm +"/" + str4.replace(".txt","_test.txt")));
+                System.setOut(QPrintStream);																		
+                System.out.println(matches);
+                QPrintStream.close();
   	
                 // Initiate comparison variables
                 List edgeList = new ArrayList<Integer>();
