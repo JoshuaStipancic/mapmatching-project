@@ -47,7 +47,7 @@ for file in glob.glob("../*/Results/*/*/*/*_time.txt"):
 for i in range(0,5):
   for j in range(0,3):
     if i != 1:
-      populate.write("TimeResults/Algorithm_" + str(i+1) + "_Application_" + str(j+1) + ".csv",times[i][j])
+      populate.write("../Results/TimeResults/Algorithm_" + str(i+1) + "_Application_" + str(j+1) + ".csv",times[i][j])
 
 # -----------
 # Algorithm 2
@@ -93,7 +93,7 @@ for file in glob.glob("../*/Results -*/*/*/*/*_time.txt"):
 # Output a separate file for each combination of algorithm and application
 for i in range(0,4):
   for j in range(0,3):
-    populate.write("TimeResults/Algorithm_2_" + routingNum[i] + "_Application_" + str(j+1) + ".csv",times[i][j])
+    populate.write("../Results/TimeResults/Algorithm_2_" + routingNum[i] + "_Application_" + str(j+1) + ".csv",times[i][j])
     
 # -------------------------
 # Algorithms 1, 3, 4, and 5
@@ -115,7 +115,7 @@ for i in range(0,5):
     misses[i][j] = [None] * 12
     for k in range(0,12):
       misses[i][j][k] = [None] * 10
-
+      
 falses = [None] * 5
 for i in range(0,5):
   falses[i] = [None] * 3
@@ -123,7 +123,31 @@ for i in range(0,5):
     falses[i][j] = [None] * 12
     for k in range(0,12):
       falses[i][j][k] = [None] * 10
+      
+dCorrect = [None] * 5
+for i in range(0,5):
+  dCorrect[i] = [None] * 3
+  for j in range(0,3):
+    dCorrect[i][j] = [None] * 12
+    for k in range(0,12):
+      dCorrect[i][j][k] = [None] * 10
+      
+dMissed = [None] * 5
+for i in range(0,5):
+  dMissed[i] = [None] * 3
+  for j in range(0,3):
+    dMissed[i][j] = [None] * 12
+    for k in range(0,12):
+      dMissed[i][j][k] = [None] * 10
 
+dFalse = [None] * 5
+for i in range(0,5):
+  dFalse[i] = [None] * 3
+  for j in range(0,3):
+    dFalse[i][j] = [None] * 12
+    for k in range(0,12):
+      dFalse[i][j][k] = [None] * 10
+      
 for file in glob.glob("../*/Results/*/*/*/*_accuracy.txt"):
 
   # Open file and read the run time
@@ -133,6 +157,9 @@ for file in glob.glob("../*/Results/*/*/*/*_accuracy.txt"):
   accuracy = text[0][0]
   missed = text[0][1]
   falsed = text[0][2]
+  ddCorrect = text[0][3]
+  ddMissed = text[0][4]
+  ddFalse = text[0][5]
 
   # Split filename at each "\" and assign to necessary variables
   null1, algorithmName, null2, scenario, phone, application, filename = file.rsplit('/')
@@ -153,14 +180,21 @@ for file in glob.glob("../*/Results/*/*/*/*_accuracy.txt"):
   accuracies[algorithm][application][scenario][phone] = accuracy
   misses[algorithm][application][scenario][phone] = missed
   falses[algorithm][application][scenario][phone] = falsed
-
+  dCorrect[algorithm][application][scenario][phone] = ddCorrect
+  dMissed[algorithm][application][scenario][phone] = ddMissed
+  dFalse[algorithm][application][scenario][phone] = ddFalse
+  
 # Output a separate file for each combination of algorithm and application
 for i in range(0,5):
   for j in range(0,3):
     if i != 1:
-      populate.write("AccuracyResults/Algorithm_" + str(i+1) + "_Application_" + str(j+1) + ".csv",accuracies[i][j])
-      populate.write("MissedResults/Algorithm_" + str(i+1) + "_Application_" + str(j+1) + ".csv",misses[i][j])
-      populate.write("FalseResults/Algorithm_" + str(i+1) + "_Application_" + str(j+1) + ".csv",falses[i][j])
+      populate.write("../Results/AccuracyResults/Algorithm_" + str(i+1) + "_Application_" + str(j+1) + ".csv",accuracies[i][j])
+      populate.write("../Results/MissedResults/Algorithm_" + str(i+1) + "_Application_" + str(j+1) + ".csv",misses[i][j])
+      populate.write("../Results/FalseResults/Algorithm_" + str(i+1) + "_Application_" + str(j+1) + ".csv",falses[i][j])
+      populate.write("../Results/DistCorrect/Algorithm_" + str(i+1) + "_Application_" + str(j+1) + ".csv",dCorrect[i][j])
+      populate.write("../Results/DistMissed/Algorithm_" + str(i+1) + "_Application_" + str(j+1) + ".csv",dMissed[i][j])
+      populate.write("../Results/DistFalse/Algorithm_" + str(i+1) + "_Application_" + str(j+1) + ".csv",dFalse[i][j])
+
 
 # -----------
 # Algorithm 2
@@ -182,14 +216,38 @@ for i in range(0,4):
     misses[i][j] = [None] * 12
     for k in range(0,12):
       misses[i][j][k] = [None] * 10
-
+      
 falses = [None] * 4
 for i in range(0,4):
   falses[i] = [None] * 3
   for j in range(0,3):
     falses[i][j] = [None] * 12
     for k in range(0,12):
-      falses[i][j][k] = [None] * 10
+      falses[i][j][k] = [None] * 10  
+
+dCorrect = [None] * 4
+for i in range(0,4):
+  dCorrect[i] = [None] * 3
+  for j in range(0,3):
+    dCorrect[i][j] = [None] * 12
+    for k in range(0,12):
+      dCorrect[i][j][k] = [None] * 10
+      
+dMissed = [None] * 4
+for i in range(0,4):
+  dMissed[i] = [None] * 3
+  for j in range(0,3):
+    dMissed[i][j] = [None] * 12
+    for k in range(0,12):
+      dMissed[i][j][k] = [None] * 10
+      
+dFalse = [None] * 4
+for i in range(0,4):
+  dFalse[i] = [None] * 3
+  for j in range(0,3):
+    dFalse[i][j] = [None] * 12
+    for k in range(0,12):
+      dFalse[i][j][k] = [None] * 10
       
 for file in glob.glob("../*/Results -*/*/*/*/*_accuracy.txt"):
   
@@ -200,6 +258,9 @@ for file in glob.glob("../*/Results -*/*/*/*/*_accuracy.txt"):
   accuracy = text[0][0]
   missed = text[0][1]
   falsed = text[0][2]
+  ddCorrect = text[0][3]
+  ddMissed = text[0][4]
+  ddFalse = text[0][5]
 
   # Split filename at each "\" and assign to necessary variables
   null1, algorithmName, routing, scenario, phone, application, filename = file.rsplit('/')
@@ -224,10 +285,16 @@ for file in glob.glob("../*/Results -*/*/*/*/*_accuracy.txt"):
   accuracies[routingNum.index(routing)][application][scenario][phone] = accuracy
   misses[routingNum.index(routing)][application][scenario][phone] = missed
   falses[routingNum.index(routing)][application][scenario][phone] = falsed
-
+  dCorrect[routingNum.index(routing)][application][scenario][phone] = ddCorrect
+  dMissed[routingNum.index(routing)][application][scenario][phone] = ddMissed
+  dFalse[routingNum.index(routing)][application][scenario][phone] = ddFalse
+  
 # Output a separate file for each combination of algorithm and application
 for i in range(0,4):
   for j in range(0,3):
-    populate.write("AccuracyResults/Algorithm_2_" + routingNum[i] + "_Application_" + str(j+1) + ".csv",accuracies[i][j])
-    populate.write("MissedResults/Algorithm_2_" + routingNum[i] + "_Application_" + str(j+1) + ".csv",misses[i][j])
-    populate.write("FalseResults/Algorithm_2_" + routingNum[i] + "_Application_" + str(j+1) + ".csv",falses[i][j])
+    populate.write("../Results/AccuracyResults/Algorithm_2_" + routingNum[i] + "_Application_" + str(j+1) + ".csv",accuracies[i][j])
+    populate.write("../Results/MissedResults/Algorithm_2_" + routingNum[i] + "_Application_" + str(j+1) + ".csv",misses[i][j])
+    populate.write("../Results/FalseResults/Algorithm_2_" + routingNum[i] + "_Application_" + str(j+1) + ".csv",falses[i][j])
+    populate.write("../Results/DistCorrect/Algorithm_2_" + routingNum[i] + "_Application_" + str(j+1) + ".csv",dCorrect[i][j])
+    populate.write("../Results/DistMissed/Algorithm_2_" + routingNum[i] + "_Application_" + str(j+1) + ".csv",dMissed[i][j])
+    populate.write("../Results/DistFalse/Algorithm_2_" + routingNum[i] + "_Application_" + str(j+1) + ".csv",dFalse[i][j])
