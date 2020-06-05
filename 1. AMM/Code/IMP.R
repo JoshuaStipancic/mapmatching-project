@@ -1,7 +1,6 @@
 ## Initial MapMatching Process: identifies the intial road link 
 imp <- function (traj, roads = "DigitalRoadNetwork", err_region) { 
   i <- 1
-  print("NEDA")
   count <- 0
   found <- FALSE
   initial_links <- data.frame(V1 = numeric(0), V2 = numeric(0), edge_id = numeric(0), 
@@ -60,13 +59,8 @@ imp <- function (traj, roads = "DigitalRoadNetwork", err_region) {
                                   }) 
     
     # Calculate the heading error
-    # if (is.na(as.numeric(candidate_links$direction))){
-    # candidate_links$direction=traj$GPS.Bearing[i]
-    #else
-    #print(candidate_links$direction)
-    #print(traj$GPS.Bearing)
     candidate_links$HE <- abs(candidate_links$direction - traj$GPS.Bearing[i])
-    #}
+    
     speed <- traj$GPS.Speed[i]/3.6
     hdop <- traj$GPS.HDOP[i]
     

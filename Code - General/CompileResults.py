@@ -19,7 +19,7 @@ for i in range(0,5):
     for k in range(0,12):
       times[i][j][k] = [None] * 10
 
-for file in glob.glob("../*/Results/*/*/*/*_time.txt"):
+for file in glob.glob("../*/Results/*/*/*/*_timeAdj.txt"):
 
   # Open file and read the run time
   f = open(file, "r")
@@ -62,7 +62,7 @@ for i in range(0,4):
     for k in range(0,12):
       times[i][j][k] = [None] * 10
 
-for file in glob.glob("../*/Results -*/*/*/*/*_time.txt"):
+for file in glob.glob("../*/Results -*/*/*/*/*_timeAdj.txt"):
   
   # Open file and read the run time
   f = open(file, "r")

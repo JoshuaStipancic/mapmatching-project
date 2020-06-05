@@ -5,7 +5,7 @@ library(gridExtra)
 
 # Clear the current workspace and set the working directory
 rm(list=ls())
-setwd(here("mapmatching-project"))
+#setwd(here("mapmatching-project"))
 
 ######################################################
 # ACCURACY
@@ -583,6 +583,8 @@ names(fullData)[names(fullData) == "distData$accuracy"] <- "distCorrect"
 names(fullData)[names(fullData) == "distMissed$accuracy"] <- "distMissed"
 names(fullData)[names(fullData) == "distFalse$accuracy"] <- "distFalse"
 
+write.csv(fullData, "Results/full_data.csv")
+
 # Detailed plots
 # --------------
 ggplot(fullData[fullData$algorithm %in% c("AMM",  "FastHMM_AStar", "FastHMM_AStarBi", "ViterbiHMM","TMM","HyMM") ,], aes(x=algorithm, y=accuracy, fill=scenario)) +
@@ -600,7 +602,7 @@ ggsave("Results/Plots/TimeByAlgorithmByScenario.pdf", width = 12, height = 7, un
 
 ggplot(fullData[fullData$algorithm %in% c("AMM",  "FastHMM_AStar", "FastHMM_AStarBi", "ViterbiHMM","TMM","HyMM") ,], aes(x=time, y=accuracy, color=algorithm)) +
   geom_point(alpha=0.6) +
-  labs(title="Time vs Algorithm", x ="Time (s)", y = "Accuracy (%)", colour = "Algorithms") +
+  labs(title="Time vs Accuracy", x ="Time (s)", y = "Accuracy (%)", colour = "Algorithms") +
   theme(plot.title = element_text(hjust = 0.5)) +
   scale_x_continuous(trans='log10') +
   scale_colour_manual(values=c("#F8766D", "#CCCCCC", "#A3A500", "#00BF7D", "#00B0F6", "#E76BF3"))
@@ -616,17 +618,11 @@ p5 <- ggplot(fullData[fullData$algorithm %in% c("AMM", "FastHMM_AStarBi", "Viter
       theme(plot.title = element_text(hjust = 0.5)) 
 ggsave("Results/Plots/MissedAndFalseVsAccuracy.pdf", arrangeGrob(grobs=list(p4, p5),nrow=1,ncol=2), width = 12, height = 7, units = "in")
 
-ggplot(fullData[fullData$algorithm %in% c("AMM",  "FastHMM_AStar", "FastHMM_AStarBi", "ViterbiHMM","TMM","HyMM") ,], aes(x=distMissed, y=distFalse, color=algorithm)) +
-  geom_point(alpha=0.6)
-
-p6 <- ggplot(fullData[fullData$algorithm %in% c("AMM", "FastHMM_AStarBi", "ViterbiHMM","TMM","HyMM") ,], aes(x=distMissed, y=distFalse, color=algorithm)) +
-      geom_point(alpha=0.6) +
-      labs(title="% Missed vs % False", x ="Missed (%)", y = "False (%)", colour = "Algorithms") +
-      theme(plot.title = element_text(hjust = 0.5))
-p7 <- ggplot(fullData[fullData$algorithm %in% c("AMM", "FastHMM_AStarBi", "ViterbiHMM","TMM","HyMM") ,], aes(x=missed, y=false, color=algorithm)) +
-      geom_point(alpha=0.6) +
-      labs(title="% Missed vs % False (Distance-Weighted)", x ="Missed (%)", y = "False (%)", colour = "Algorithms") +
-      theme(plot.title = element_text(hjust = 0.5))
-ggsave("Results/Plots/MissedVsFalse.pdf", arrangeGrob(grobs=list(p6, p7),nrow=1,ncol=2), width = 12, height = 7, units = "in")
+ggplot(fullData[fullData$algorithm %in% c("AMM", "FastHMM_AStarBi", "ViterbiHMM","TMM","HyMM") ,], aes(x=missed, y=false, color=algorithm)) +
+  geom_point(alpha=0.6) +
+  labs(title="% Missed vs % False", x ="Missed (%)", y = "False (%)", colour = "Algorithms") +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_reverse() + scale_y_reverse()
+ggsave("Results/Plots/MissedVsFalse.pdf", width = 12, height = 7, units = "in")
 
   

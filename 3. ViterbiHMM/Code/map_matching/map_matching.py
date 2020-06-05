@@ -20,8 +20,8 @@ except ImportError:
 # Default parameters copied from OSRM
 # See: https://github.com/Project-OSRM/osrm-backend/blob/master/routing_algorithms/map_matching.hpp
 # TODO: Need to optimize these parameters
-DEFAULT_BETA = 5.0
-DEFAULT_SIGMA_Z = 4.07
+DEFAULT_BETA = 20 #default=5
+DEFAULT_SIGMA_Z = 1 #default=4.07
 DEFAULT_MAX_ROUTE_DISTANCE = 2000
 
 
