@@ -6,9 +6,9 @@ import csv
 import re
 import time
 
-# -------------------------
-# Algorithms 1, 3, 4, and 5
-# -------------------------
+# ------------------------------
+# Algorithms 1, 3, 4, and 5 TIME
+# ------------------------------
 
 # Generate structure of datafile
 times = [None] * 5
@@ -47,11 +47,12 @@ for file in glob.glob("../*/Results/*/*/*/*_timeAdj.txt"):
 for i in range(0,5):
   for j in range(0,3):
     if i != 1:
+      if not os.path.exists("../Results/TimeResults/"):os.makedirs("../Results/TimeResults/")
       populate.write("../Results/TimeResults/Algorithm_" + str(i+1) + "_Application_" + str(j+1) + ".csv",times[i][j])
 
-# -----------
-# Algorithm 2
-# -----------
+# ----------------
+# Algorithm 2 TIME
+# ----------------
 
 # Generate structure of datafile
 times = [None] * 4
@@ -95,9 +96,9 @@ for i in range(0,4):
   for j in range(0,3):
     populate.write("../Results/TimeResults/Algorithm_2_" + routingNum[i] + "_Application_" + str(j+1) + ".csv",times[i][j])
     
-# -------------------------
-# Algorithms 1, 3, 4, and 5
-# -------------------------
+# ----------------------------------
+# Algorithms 1, 3, 4, and 5 ACCURACY
+# ----------------------------------
 
 # Generate structure of datafile
 accuracies = [None] * 5
@@ -188,17 +189,23 @@ for file in glob.glob("../*/Results/*/*/*/*_accuracy.txt"):
 for i in range(0,5):
   for j in range(0,3):
     if i != 1:
+      if not os.path.exists("../Results/AccuracyResults/"):os.makedirs("../Results/AccuracyResults/")
       populate.write("../Results/AccuracyResults/Algorithm_" + str(i+1) + "_Application_" + str(j+1) + ".csv",accuracies[i][j])
+      if not os.path.exists("../Results/MissedResults/"):os.makedirs("../Results/MissedResults/")
       populate.write("../Results/MissedResults/Algorithm_" + str(i+1) + "_Application_" + str(j+1) + ".csv",misses[i][j])
+      if not os.path.exists("../Results/FalseResults/"):os.makedirs("../Results/FalseResults/")
       populate.write("../Results/FalseResults/Algorithm_" + str(i+1) + "_Application_" + str(j+1) + ".csv",falses[i][j])
+      if not os.path.exists("../Results/DistCorrect/"):os.makedirs("../Results/DistCorrect/")
       populate.write("../Results/DistCorrect/Algorithm_" + str(i+1) + "_Application_" + str(j+1) + ".csv",dCorrect[i][j])
+      if not os.path.exists("../Results/DistMissed/"):os.makedirs("../Results/DistMissed/")
       populate.write("../Results/DistMissed/Algorithm_" + str(i+1) + "_Application_" + str(j+1) + ".csv",dMissed[i][j])
+      if not os.path.exists("../Results/DistFalse/"):os.makedirs("../Results/DistFalse/")
       populate.write("../Results/DistFalse/Algorithm_" + str(i+1) + "_Application_" + str(j+1) + ".csv",dFalse[i][j])
 
 
-# -----------
-# Algorithm 2
-# -----------
+# --------------------
+# Algorithm 2 ACCURACY
+# --------------------
 
 # Generate structure of datafile
 accuracies = [None] * 4
@@ -281,7 +288,7 @@ for file in glob.glob("../*/Results -*/*/*/*/*_accuracy.txt"):
   # Extract app
   application = int(application[0])-1
 
-  # 'Insert' time into correct location in data file
+  # 'Insert' measure into correct location in data file
   accuracies[routingNum.index(routing)][application][scenario][phone] = accuracy
   misses[routingNum.index(routing)][application][scenario][phone] = missed
   falses[routingNum.index(routing)][application][scenario][phone] = falsed

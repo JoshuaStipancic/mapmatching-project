@@ -4,7 +4,7 @@ import populate
 import subprocess
 import csv
 import re
-import time
+import time 
 import difflib
 
 # Read and format the length data file
@@ -42,18 +42,22 @@ for file in glob.glob("../*/Results*/*/*/*/*.csv"):
       if row:
         truthh.append(row[0])
 
-    # Determine the map matching accuracy
+    # Calculate ACCURACY
     results = difflib.SequenceMatcher(None, tuple(matchedd), tuple(truthh))
-
+    accuracy = results.ratio()*100
+    
+    # Compute number of correct matches, missed links, and false links
     nMatches = sum([m.size for m in results.get_matching_blocks()])
     nMissed = len(tuple(truthh))-nMatches
     nFalse = len(tuple(matchedd))-nMatches
     
-    accuracy = results.ratio()*100
+    # Calculate FALSE
     if len(tuple(matchedd)) > 0:
       false = float(nFalse)/len(tuple(matchedd))*100
     else:
       false = 0
+      
+    #Calculate MISSED
     missed = float(nMissed)/len(tuple(truthh))*100
     
     # -----------------------------------
@@ -103,10 +107,3 @@ for file in glob.glob("../*/Results*/*/*/*/*.csv"):
     accuracyFile = open(file.replace('.csv','_accuracy.txt'),"w")
     accuracyFile.write("%s, %s, %s, %s, %s, %s, %s, %s, %s" % (accuracy, missed, false, distCorrect, distMissed, distFalse, nMatches, len(tuple(truthh)), len(tuple(matched))))
     accuracyFile.close()
-
-
-# results = difflib.SequenceMatcher(None, "abcdefghij", "abcdefghij")
-# accuracy = results.ratio()*100
-# print accuracy
-
-    
