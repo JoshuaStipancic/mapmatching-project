@@ -3,6 +3,10 @@ Data_backup/
 GIS Files/
 Test/
 Results_Neda/
+Results - Old/
+Code - General/GetLinks.py
+Code - General/Links.csv
+Code - General/GPXConvert.py
 *.class
 *.pyc
 .DS_Store
