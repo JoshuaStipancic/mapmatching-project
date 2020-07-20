@@ -1,4 +1,4 @@
-# Introduction the the MapMatching Project
+# Introduction to the MapMatching Project
 
 The continuous monitoring and tracking of individuals is of great interest to many in the public and private sectors. The development of Global Navigation Satellite Systems (GNSS) has led to a dramatic increase in the number of location-based services (LBS) used to track the location of individuals or vehicles. GPS data accuracy is critical to provide accurate performance measures, yet the optimal operating conditions for GPS receivers are rarely experienced in the field. Tall buildings and other aspects of urban environments can completely block GPS signals or create spurious signals (the urban canyon effect) and radio frequency-based systems remain sensitive to interference, signal blocking, jamming, and multipath errors.
 
