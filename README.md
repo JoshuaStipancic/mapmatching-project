@@ -4,10 +4,10 @@ The continuous monitoring and tracking of individuals is of great interest to ma
 
 Obviously, obtaining reliable results in difficult environments requires a method to reduce or eliminate positional noise. Map matching is the process of estimating an individual’s position in the road network using their GPS trip data. The objective of this study is to evaluate the performance of several algorithms on smartphone GPS data in urban environments. Algorithms are compared based on accuracy (by comparing to ground truth route data) and computational time. Performance is compared across several types of smartphones, several data collection applications, and several environments in Montreal, Canada. Specifically, algorithms from four different map matching methodologies are considered including:
 
-i) Topological Map Matching (TMM)
-ii) Probabilistic Map Matching (PMM, in both Standard and Fast variations)
-iii) Advanced Map Matching (AMM)
-iv) Hybrid Map Matching (HyMM) 
+i. Topological Map Matching (TMM)
+ii. Probabilistic Map Matching (PMM, in both Standard and Fast variations)
+iii. Advanced Map Matching (AMM)
+iv. Hybrid Map Matching (HyMM) 
 
 # General Steps for Generating Map Matching Results
 1) For each of Algorithms 1-5, navigate to the "Code" folder.
