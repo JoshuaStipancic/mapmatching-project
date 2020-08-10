@@ -1,9 +1,0 @@
-files=Test/*.gpx
-for f in $files
-  do
-  
-  mkdir -p 4-TopologicalMM/Results/$f
-  
-  curl -X POST -H 'Content-Type: application/gpx+xml' -H 'Accept: application/json' --data-binary @$f "http://test.roadmatching.com/rest/mapmatch/?app_id=a80ebc48&app_key=4b1c7110f6674008f10e115e6daf40fe" -o $f.json
-
-done
