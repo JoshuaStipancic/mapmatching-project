@@ -15,7 +15,7 @@ dataa <- data.frame(accuracy=numeric(),
                     application = character())
 
 phones <- c("iPhoneSE", "iPhone6S", "iPhone7", "iPhone7Plus", "iPhone8", "GalaxyS5", "GalaxyS7", "GalaxyS8", "LGG6", "Pixel2")
-algorithms <- c("AMM", "FastHMM_AStar", "FastHMM_AStarBi", "FastHMM_Dijkstra", "FastHMM_DijkstraBi", "ViterbiHMM","TMM","HyMM")
+algorithms <- c("FMM", "FastHMM (AStar)", "FastHMM (AStarBi)", "FastHMM (Dijkstra)", "FastHMM (DijkstraBi)", "StandardHMM","TMM","HyMM")
 algos <- c("1_Applicatio", "2_astar_Appl", "2_astarbi_Ap", "2_dijkstra_A","2_dijkstrabi","3_Applicatio", "4_Applicatio", "5_Applicatio")
 applications <- c("GPSTracker", "TrueMotion", "AutoMerit")
 
@@ -49,7 +49,7 @@ distData <- data.frame(accuracy=numeric(),
                     application = character())
 
 phones <- c("iPhoneSE", "iPhone6S", "iPhone7", "iPhone7Plus", "iPhone8", "GalaxyS5", "GalaxyS7", "GalaxyS8", "LGG6", "Pixel2")
-algorithms <- c("AMM", "FastHMM_AStar", "FastHMM_AStarBi", "FastHMM_Dijkstra", "FastHMM_DijkstraBi", "ViterbiHMM","TMM","HyMM")
+algorithms <- c("FMM", "FastHMM (AStar)", "FastHMM (AStarBi)", "FastHMM (Dijkstra)", "FastHMM (DijkstraBi)", "StandardHMM","TMM","HyMM")
 algos <- c("1_Applicatio", "2_astar_Appl", "2_astarbi_Ap", "2_dijkstra_A","2_dijkstrabi","3_Applicatio", "4_Applicatio", "5_Applicatio")
 applications <- c("GPSTracker", "TrueMotion", "AutoMerit")
 
@@ -83,7 +83,7 @@ distMissed <- data.frame(accuracy=numeric(),
                        application = character())
 
 phones <- c("iPhoneSE", "iPhone6S", "iPhone7", "iPhone7Plus", "iPhone8", "GalaxyS5", "GalaxyS7", "GalaxyS8", "LGG6", "Pixel2")
-algorithms <- c("AMM", "FastHMM_AStar", "FastHMM_AStarBi", "FastHMM_Dijkstra", "FastHMM_DijkstraBi", "ViterbiHMM","TMM","HyMM")
+algorithms <- c("FMM", "FastHMM (AStar)", "FastHMM (AStarBi)", "FastHMM (Dijkstra)", "FastHMM (DijkstraBi)", "StandardHMM","TMM","HyMM")
 algos <- c("1_Applicatio", "2_astar_Appl", "2_astarbi_Ap", "2_dijkstra_A","2_dijkstrabi","3_Applicatio", "4_Applicatio", "5_Applicatio")
 applications <- c("GPSTracker", "TrueMotion", "AutoMerit")
 
@@ -117,7 +117,7 @@ distFalse <- data.frame(accuracy=numeric(),
                         application = character())
 
 phones <- c("iPhoneSE", "iPhone6S", "iPhone7", "iPhone7Plus", "iPhone8", "GalaxyS5", "GalaxyS7", "GalaxyS8", "LGG6", "Pixel2")
-algorithms <- c("AMM", "FastHMM_AStar", "FastHMM_AStarBi", "FastHMM_Dijkstra", "FastHMM_DijkstraBi", "ViterbiHMM","TMM","HyMM")
+algorithms <- c("FMM", "FastHMM (AStar)", "FastHMM (AStarBi)", "FastHMM (Dijkstra)", "FastHMM (DijkstraBi)", "StandardHMM","TMM","HyMM")
 algos <- c("1_Applicatio", "2_astar_Appl", "2_astarbi_Ap", "2_dijkstra_A","2_dijkstrabi","3_Applicatio", "4_Applicatio", "5_Applicatio")
 applications <- c("GPSTracker", "TrueMotion", "AutoMerit")
 
@@ -151,7 +151,7 @@ missedData <- data.frame(accuracy=numeric(),
                          application = character())
 
 phones <- c("iPhoneSE", "iPhone6S", "iPhone7", "iPhone7Plus", "iPhone8", "GalaxyS5", "GalaxyS7", "GalaxyS8", "LGG6", "Pixel2")
-algorithms <- c("AMM", "FastHMM_AStar", "FastHMM_AStarBi", "FastHMM_Dijkstra", "FastHMM_DijkstraBi", "ViterbiHMM","TMM","HyMM")
+algorithms <- c("FMM", "FastHMM (AStar)", "FastHMM (AStarBi)", "FastHMM (Dijkstra)", "FastHMM (DijkstraBi)", "StandardHMM","TMM","HyMM")
 algos <- c("1_Applicatio", "2_astar_Appl", "2_astarbi_Ap", "2_dijkstra_A","2_dijkstrabi","3_Applicatio", "4_Applicatio", "5_Applicatio")
 applications <- c("GPSTracker", "TrueMotion", "AutoMerit")
 
@@ -185,7 +185,7 @@ falseData <- data.frame(accuracy=numeric(),
                         application = character())
 
 phones <- c("iPhoneSE", "iPhone6S", "iPhone7", "iPhone7Plus", "iPhone8", "GalaxyS5", "GalaxyS7", "GalaxyS8", "LGG6", "Pixel2")
-algorithms <- c("AMM", "FastHMM_AStar", "FastHMM_AStarBi", "FastHMM_Dijkstra", "FastHMM_DijkstraBi", "ViterbiHMM","TMM","HyMM")
+algorithms <- c("FMM", "FastHMM (AStar)", "FastHMM (AStarBi)", "FastHMM (Dijkstra)", "FastHMM (DijkstraBi)", "StandardHMM","TMM","HyMM")
 algos <- c("1_Applicatio", "2_astar_Appl", "2_astarbi_Ap", "2_dijkstra_A","2_dijkstrabi","3_Applicatio", "4_Applicatio", "5_Applicatio")
 applications <- c("GPSTracker", "TrueMotion", "AutoMerit")
 
@@ -216,7 +216,7 @@ dataaa <- data.frame(time=numeric(),
                      application = character())
 
 phones <- c("iPhoneSE", "iPhone6S", "iPhone7", "iPhone7Plus", "iPhone8", "GalaxyS5", "GalaxyS7", "GalaxyS8", "LGG6", "Pixel2")
-algorithms <- c("AMM", "FastHMM_AStar", "FastHMM_AStarBi", "FastHMM_Dijkstra", "FastHMM_DijkstraBi", "ViterbiHMM","TMM","HyMM")
+algorithms <- c("FMM", "FastHMM (AStar)", "FastHMM (AStarBi)", "FastHMM (Dijkstra)", "FastHMM (DijkstraBi)", "StandardHMM","TMM","HyMM")
 algos <- c("1_Applicatio", "2_astar_Appl", "2_astarbi_Ap", "2_dijkstra_A","2_dijkstrabi","3_Applicatio", "4_Applicatio", "5_Applicatio")
 applications <- c("GPSTracker", "TrueMotion", "AutoMerit")
 

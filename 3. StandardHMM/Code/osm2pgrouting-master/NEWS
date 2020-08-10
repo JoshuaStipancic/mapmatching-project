@@ -1,0 +1,106 @@
+osm2pgRouting 2.3.7
+
+* 
+
+osm2pgRouting 2.3.6
+
+* Fix: Incorrect classification of one-ways.
+* Fix: command line configuration in print outputs (db password removed).
+* Other minor fixes.
+
+osm2pgRouting 2.3.5
+
+* Fix: zero division error when max_speed = 0.
+* Fix: fixed osm_ways parsing - OSMDocument.
+* Fix: switch to a more inclusive check for nullptr definition (fixes compilation on macOS 10.13 using Xcode 9.3)
+* Docs improvements: How to release doc.
+
+osm2pgRouting 2.3.4
+
+* Fix: osm_elements - fixed boolean assignment with boost::lexical_cast.
+* Use ${CMAKE_INSTALL_PREFIX} in CMakeLists.txt.
+* Readme doc improvements: Tips section and Table of contents.
+
+osm2pgRouting 2.3.3
+
+* Fix: wrong assumption in implied_oneWay() function
+* Fix: regression on 2.3.2: fixed hstore refs handling
+
+osm2pgRouting 2.3.2
+
+* Fix: Only on linux: use the wc command to count lines
+* Fix: the `osm_<tables>` are created only when addnodes flag is on
+* Fix: removed unused flag of the command line
+
+osm2pgRouting 2.3.1
+
+* Fix: When keys have spaces
+* Fix: Generating relations
+
+osm2pgRouting 2.3.0
+
+* Cost should not return the same value
+* Added a points of Interest table
+* Some default one_way values are taken into consideration
+* Relations are also condsidered
+* New mapconfig_for_pedestrian.xml
+
+
+osm2pgRouting 2.2.0
+
+* Adding foreign keys to the tables.
+* Added a progress bar.
+* New mapconfig_for_bicycles.xml
+* Improved the C++ code.
+  * remove the use of pointers to avoid leaks.
+* Table `osm_ways_tags` because information is redundant.
+
+
+
+osm2pgRouting 2.1.0
+
+   New "ways" table structure:
+      Column       |           Type            |  Modifications
+-------------------+---------------------------+----------------
+ gid               | bigint                    |
+ class_id          | integer                   |
+ length            | double precision          |
+ length_m          | double precision          | new column
+ name              | text                      |
+ source            | bigint                    |
+ target            | bigint                    |
+ x1                | double precision          |
+ y1                | double precision          |
+ x2                | double precision          |
+ y2                | double precision          |
+ cost              | double precision          | name changed from 'to_cost'
+ reverse_cost      | double precision          |
+ cost_s            | double precision          | new column
+ reverse_cost_s    | double precision          | new column
+ rule              | text                      |
+ one_way           | integer                   | new column
+ maxspeed_forward  | integer                   |
+ maxspeed_backward | integer                   |
+ osm_id            | bigint                    |
+ source_osm        | bigint                    | new column
+ target_osm        | bigint                    | new column
+ priority          | double precision          |
+ the_geom          | geometry(LineString,4326) |
+
+     New "ways_vertices_pgr" table structure
+  Column  |         Type         |  Modifications
+----------+----------------------+----------------------------------------------------------------
+ id       | bigint               |
+ osm_id   | bigint               | new column
+ cnt      | integer              |
+ chk      | integer              |
+ ein      | integer              |
+ eout     | integer              |
+ lon      | numeric(11,8)        | new column
+ lat      | numeric(11,8)        | new column
+ the_geom | geometry(Point,4326) |
+Indexes:
+    "ways_vertices_pgr_pkey" PRIMARY KEY, btree (id)
+    "vertex_id" UNIQUE CONSTRAINT, btree (osm_id)
+    "ways_vertices_pgr_gdx" gist (the_geom)
+    "ways_vertices_pgr_osm_id_idx" btree (osm_id)
