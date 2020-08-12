@@ -1,12 +1,9 @@
-library(here)
 library(stringr)
 library(ggplot2)
 library(gridExtra)
 
 # Clear the current workspace and set the working directory
-#rm(list=ls())
-#setwd(here("mapmatching-project")) 
-setwd("/Users/stipancicjosh/mapmatching-project")
+setwd(here())
 fullData <- read.csv("Results/full_data.csv")
 
 ######################################################

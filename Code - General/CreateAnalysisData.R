@@ -3,7 +3,7 @@ library(stringr)
 library(ggplot2)
 library(gridExtra)
 
-setwd("/Users/stipancicjosh/mapmatching-project")
+setwd(here())
 
 ######################################################
 # ACCURACY

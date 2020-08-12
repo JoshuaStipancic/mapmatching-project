@@ -17,8 +17,7 @@ library(here)
 library(stringr)
 
 # Clear the current workspace and set the working directory
-rm(list=ls())
-setwd(here("mapmatching-project"))
+setwd(here())
 
 # Source the required R code
 source("1. AMM/Code/Data-track.R")
