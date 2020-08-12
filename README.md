@@ -6,12 +6,12 @@ Obviously, obtaining reliable results in difficult environments requires a metho
 
 1) Topological Map Matching (TMM)
 2) Probabilistic Map Matching (PMM, in both Standard and Fast variations)
-3) Advanced Map Matching (AMM)
+3) Fuzzy Map Matching (FMM)
 4) Hybrid Map Matching (HyMM) 
 
 # General Steps for Generating Map Matching Results
 1) For each of Algorithms 1-5, navigate to the "Code" folder.
 2) Specific instructions for running each algorithm is contained in a separate README file located in the primary algorithm directory.
-3) The implementation of each algorithm is contained in a file entitled "Run" followed by the algorithm abbreviation. For example in Algorithm 1, the script is located in 1. "AMM/Code/RunAMM.R" 
+3) The implementation of each algorithm is contained in a file entitled "Run" followed by the algorithm abbreviation. For example in Algorithm 1, the script is located in 1. "FMM/Code/RunFMM.R" 
 4) Generated results "Results" within the primary algorithm directory, where the results are stored using the same directory structure as the raw data. The exception to this is Algorithm 2, where results are stored in separate folders for each of the considered working algorithms. For example, for Algorithm 2 using Dijkstra's routing algorithm, the results are found in "2. FastHMM/Results - dijkstra". Outputs of the map matching algorithms include the map matched results and run times.
 5) Run the python script "AnalyzeData.py" to produce the final results. The script is located in the following directory: "mapmatching-project/Code - General". This single file completes several steps: computing accuracy measures, normalizing run times, compiling results into a single data file, producing plots, and running ANOVA tests. All results are contained within the folder "mapmatching-project/Results".
