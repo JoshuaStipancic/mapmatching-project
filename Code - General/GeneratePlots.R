@@ -4,7 +4,7 @@ library(ggplot2)
 library(gridExtra)
 
 # Clear the current workspace and set the working directory
-rm(list=ls())
+#rm(list=ls())
 #setwd(here("mapmatching-project")) 
 setwd("/Users/stipancicjosh/mapmatching-project")
 fullData <- read.csv("Results/full_data.csv")
@@ -367,46 +367,54 @@ myColours <-ifelse(levels(fullData$algorithm)=="FMM", "#F8766D",
 # FIGURE 4
 # --------
 ggplot(fullData[fullData$algorithm %in% c("FMM", "FastHMM (AStarBi)", "StandardHMM","TMM","HyMM") ,], aes(x=scenario, y=accuracy, group=algorithm, color=algorithm)) +
-  stat_summary(fun.y="mean", geom="line") +
+  stat_summary(fun.y="mean", geom="line", size=2) +
+  #stat_summary(fun.data = mean_se, geom = "errorbar") + 
   scale_colour_manual(values=c("#F8766D", "#A3A500","#E76BF3", "#00B0F6", "#00BF7D")) +
   labs(title="Average Accuracy by Scenario", x ="Scenario", y = "Average Accuracy (%)", colour = "Algorithms")
 ggsave("Results/Plots/AverageAccuracyByScenario.pdf", width = 12, height = 7, units = "in")
 
 ggplot(fullData[fullData$algorithm %in% c("FMM", "FastHMM (AStarBi)", "StandardHMM","TMM","HyMM") ,], aes(x=application, y=accuracy, group=algorithm, color=algorithm)) +
-  stat_summary(fun.y="mean", geom="line") +
+  stat_summary(fun.y="mean", geom="line", size=2) +
+  #stat_summary(fun.data = mean_se, geom = "errorbar") + 
   scale_colour_manual(values=c("#F8766D", "#A3A500","#E76BF3", "#00B0F6", "#00BF7D")) +
   labs(title="Average Accuracy by Application", x ="Application", y = "Average Accuracy (%)", colour = "Algorithms")
 ggsave("Results/Plots/AverageAccuracyByApplication.pdf", width = 12, height = 7, units = "in")
 
 ggplot(fullData[fullData$algorithm %in% c("FMM", "FastHMM (AStarBi)", "StandardHMM","TMM","HyMM") ,], aes(x=scenario, y=missed, group=algorithm, color=algorithm)) +
-  stat_summary(fun.y="mean", geom="line") +
+  stat_summary(fun.y="mean", geom="line", size=2) +
+  #stat_summary(fun.data = mean_se, geom = "errorbar") + 
   scale_colour_manual(values=c("#F8766D", "#A3A500","#E76BF3", "#00B0F6", "#00BF7D")) +
   labs(title="Average Missed by Scenario", x ="Scenario", y = "Average Missed (%)", colour = "Algorithms")
 ggsave("Results/Plots/AverageMissedByScenario.pdf", width = 12, height = 7, units = "in")
 
 ggplot(fullData[fullData$algorithm %in% c("FMM", "FastHMM (AStarBi)", "StandardHMM","TMM","HyMM") ,], aes(x=application, y=missed, group=algorithm, color=algorithm)) +
-  stat_summary(fun.y="mean", geom="line") +
+  stat_summary(fun.y="mean", geom="line", size=2) +
+  #stat_summary(fun.data = mean_se, geom = "errorbar") + 
   scale_colour_manual(values=c("#F8766D", "#A3A500","#E76BF3", "#00B0F6", "#00BF7D")) +
   labs(title="Average Missed by Application", x ="Application", y = "Average Missed (%)", colour = "Algorithms")
 ggsave("Results/Plots/AverageMissedByApplication.pdf", width = 12, height = 7, units = "in")
 
 ggplot(fullData[fullData$algorithm %in% c("FMM", "FastHMM (AStarBi)", "StandardHMM","TMM","HyMM") ,], aes(x=scenario, y=false, group=algorithm, color=algorithm)) +
-  stat_summary(fun.y="mean", geom="line") +
+  stat_summary(fun.y="mean", geom="line", size=2) +
+  #stat_summary(fun.data = mean_se, geom = "errorbar") + 
   scale_colour_manual(values=c("#F8766D", "#A3A500","#E76BF3", "#00B0F6", "#00BF7D")) +
   labs(title="Average False by Scenario", x ="Scenario", y = "Average False (%)", colour = "Algorithms")
 ggsave("Results/Plots/AverageFalseByScenario.pdf", width = 12, height = 7, units = "in")
 
 ggplot(fullData[fullData$algorithm %in% c("FMM", "FastHMM (AStarBi)", "StandardHMM","TMM","HyMM") ,], aes(x=application, y=false, group=algorithm, color=algorithm)) +
-  stat_summary(fun.y="mean", geom="line") +
+  stat_summary(fun.y="mean", geom="line", size=2) +
+  #stat_summary(fun.data = mean_se, geom = "errorbar") + 
   scale_colour_manual(values=c("#F8766D", "#A3A500","#E76BF3", "#00B0F6", "#00BF7D")) +
   labs(title="Average False by Application", x ="Application", y = "Average False (%)", colour = "Algorithms")
 ggsave("Results/Plots/AverageFalseByApplication.pdf", width = 12, height = 7, units = "in")
 
 # FIGURE 5
 # --------
-ggplot(fullData, aes(x=phone, y=missed)) +
-  geom_boxplot(fill="light blue") +
-  labs(title="Missed by Phones", x ="Phones", y = "Missed (%)")
+ggplot(fullData, aes(x=phone, y=missed, fill=phone)) +
+  geom_boxplot() +
+  scale_fill_manual(values=c("#E69F00","#E69F00","#E69F00", "#56B4E9","#56B4E9","#56B4E9","#56B4E9","#56B4E9","#E69F00","#E69F00")) +
+  labs(title="Missed by Phones", x ="Phones", y = "Missed (%)") +
+  theme(legend.position = "none")
 ggsave("Results/Plots/MissedByPhones.pdf", width = 12, height = 7, units = "in")
 
 # FIGURE 6
@@ -419,14 +427,18 @@ ggsave("Results/Plots/TimeByAlgorithms.pdf", width = 12, height = 7, units = "in
 # FIGURE 7
 # --------
 ggplot(fullData[fullData$algorithm %in% c("FMM",  "FastHMM (AStar)", "FastHMM (AStarBi)", "StandardHMM","TMM","HyMM") ,], aes(x=time, y=accuracy, color=algorithm)) +
-  geom_point(alpha=0.6) +
+  geom_point(alpha=0.2) +
+  stat_ellipse() +
+  theme(axis.text.x = element_text(angle = 0)) +
   labs(title="Time vs Accuracy", x ="Time (s)", y = "Accuracy (%)", colour = "Algorithms") +
   scale_x_continuous(trans='log10') +
   scale_colour_manual(values=c("#F8766D", "#CCCCCC", "#A3A500","#E76BF3", "#00B0F6", "#00BF7D"))
 ggsave("Results/Plots/TimeVsAccuracy.pdf", width = 12, height = 7, units = "in")
 
 ggplot(fullData[fullData$algorithm %in% c("FMM", "FastHMM (AStarBi)", "StandardHMM","TMM","HyMM") ,], aes(x=missed, y=false, color=algorithm)) +
-  geom_point(alpha=0.6) +
+  geom_point(alpha=0.2) +
+  stat_ellipse() +
+  theme(axis.text.x = element_text(angle = 0)) +
   labs(title="% Missed vs % False", x ="Missed (%)", y = "False (%)", colour = "Algorithms") +
   scale_x_reverse() + scale_y_reverse() +
   scale_colour_manual(values=c("#F8766D", "#A3A500","#E76BF3", "#00B0F6", "#00BF7D"))
