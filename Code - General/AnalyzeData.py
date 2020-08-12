@@ -23,7 +23,7 @@ subprocess.check_call(['Rscript', 'CreateAnalysisData.R'], shell=False)
 # Create analysis box, line, and scatter plots
 print("Generating plots ...")
 subprocess.check_call(['Rscript', 'GeneratePlots.R'], shell=False)
-# Run and output required ANOVA tests
+# catRun and output required ANOVA tests
 print("Running ANOVA analysis ...")
 subprocess.check_call(['Rscript', 'ANOVA.R'], shell=False)
 
