@@ -11,7 +11,7 @@ The advanced map matching procedure is comprised of three main algorithms:
 ## Publications
 Quddus, M.A. High Integrity Map Matching Algorithms for Advanced Transport Telematics Applications. *Ph.D. Thesis, Imperial College London*, UK, 2006. (http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.119.7689&rep=rep1&type=pdf)
 
-# Run the Advanced Map Matching Algorithm
+# Run the Fuzzy Map Matching Algorithm
 1. All required R scripts are provided in *Code/*
 2. Ensure the required libraries are installed (see *Code/RunAMM.R*).
 3. Source the main algorithm file, *Code/RunFMM.R*.
