@@ -20,18 +20,18 @@ library(stringr)
 setwd(here())
 
 # Source the required R code
-source("1. AMM/Code/Data-track.R")
-source("1. AMM/Code/DRN.R")
-source("1. AMM/Code/fuzzy_model.R")
-source("1. AMM/Code/fuzzyMM.R")
-source("1. AMM/Code/fuzzyMM-package.R")
-source("1. AMM/Code/IMP.R")
-source("1. AMM/Code/SMP1.R")
-source("1. AMM/Code/SMP2.R")
-source("1. AMM/Code/var_bounds.R")
-source("1. AMM/Code/FIS1.R")
-source("1. AMM/Code/FIS2.R")
-source("1. AMM/Code/FIS3.R")
+source("1. FMM/Code/Data-track.R")
+source("1. FMM/Code/DRN.R")
+source("1. FMM/Code/fuzzy_model.R")
+source("1. FMM/Code/fuzzyMM.R")
+source("1. FMM/Code/fuzzyMM-package.R")
+source("1. FMM/Code/IMP.R")
+source("1. FMM/Code/SMP1.R")
+source("1. FMM/Code/SMP2.R")
+source("1. FMM/Code/var_bounds.R")
+source("1. FMM/Code/FIS1.R")
+source("1. FMM/Code/FIS2.R")
+source("1. FMM/Code/FIS3.R")
 
 #################################
 # Run code for True Motion data #
@@ -110,7 +110,7 @@ source("1. AMM/Code/FIS3.R")
 #   last = unlist(gregexpr("/", filename))[length(unlist(gregexpr("/", filename)))]
 # 
 #   # Generate the filepath and output filename
-#   filepath = file.path("1. AMM/Results", substring(filename, first + 1, last))
+#   filepath = file.path("1. FMM/Results", substring(filename, first + 1, last))
 #   output = substring(filename, unlist(gregexpr("/", filename))[length(unlist(gregexpr("/", filename)))]+1)
 #   output = str_replace(output, ".xlsx", ".csv")
 #     
@@ -202,7 +202,7 @@ source("1. AMM/Code/FIS3.R")
 #   last = unlist(gregexpr("/", filename))[length(unlist(gregexpr("/", filename)))]
 # 
 #   # Generate the filepath and output filename
-#   filepath = file.path("1. AMM/Results", substring(filename, first + 1, last))
+#   filepath = file.path("1. FMM/Results", substring(filename, first + 1, last))
 #   output = substring(filename, unlist(gregexpr("/", filename))[length(unlist(gregexpr("/", filename)))]+1)
 #   output = str_replace(output, ".xlsx", ".csv")
 # 
@@ -316,7 +316,7 @@ for (filename in Sys.glob("Data/*/*/1GPS-Tracker_APP/*.csv"))
   last = unlist(gregexpr("/", filename))[length(unlist(gregexpr("/", filename)))]
 
   # Generate the filepath and output filename
-  filepath = file.path("1. AMM/Results", substring(filename, first + 1, last))
+  filepath = file.path("1. FMM/Results", substring(filename, first + 1, last))
   output = substring(filename, unlist(gregexpr("/", filename))[length(unlist(gregexpr("/", filename)))]+1)
 
   # Create the directory (if necessary) and save the output files

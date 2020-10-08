@@ -3,19 +3,19 @@ Comparison Group          F            p-value
 ------------------------------------------------
 ACCURACY
 ------------------------------------------------
-Algorithm x Scenario      6.598        3.784e-58
-Algorithm x Application   17.6         1.603e-42
+Algorithm x Scenario      9.093        5.416e-88
+Algorithm x Application   21.29         2.728e-52
 ------------------------------------------------
 MISSED
 ------------------------------------------------
-Algorithm x Scenario      9.419        6.135e-92
-Algorithm x Application   14.65        1.189e-34
-Phones                    2.938        0.001791
+Algorithm x Scenario      13.19        1.751e-135
+Algorithm x Application   18.26        2.968e-44
+Phones                    3.235        0.0006483
 ------------------------------------------------
 FALSE
 ------------------------------------------------
-Algorithm x Scenario      7.741        6.705e-72
-Algorithm x Application   23.24        1.946e-57
+Algorithm x Scenario      8.74        7.938e-84
+Algorithm x Application   25.78        4.577e-64
 ------------------------------------------------
 TIME
 ------------------------------------------------

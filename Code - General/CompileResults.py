@@ -178,9 +178,9 @@ for file in glob.glob("../*/Results/*/*/*/*_accuracy.txt"):
   application = int(application[0])-1
 
   # 'Insert' time into correct location in data file
-  accuracies[algorithm][application][scenario][phone] = accuracy
-  misses[algorithm][application][scenario][phone] = missed
-  falses[algorithm][application][scenario][phone] = falsed
+  accuracies[algorithm][application][scenario][phone] = accuracy if float(accuracy) != 0 else ""
+  misses[algorithm][application][scenario][phone] = missed if float(missed) != 100 else ""
+  falses[algorithm][application][scenario][phone] = falsed if float(falsed) != 100 else ""
   dCorrect[algorithm][application][scenario][phone] = ddCorrect
   dMissed[algorithm][application][scenario][phone] = ddMissed
   dFalse[algorithm][application][scenario][phone] = ddFalse
@@ -289,9 +289,9 @@ for file in glob.glob("../*/Results -*/*/*/*/*_accuracy.txt"):
   application = int(application[0])-1
 
   # 'Insert' measure into correct location in data file
-  accuracies[routingNum.index(routing)][application][scenario][phone] = accuracy
-  misses[routingNum.index(routing)][application][scenario][phone] = missed
-  falses[routingNum.index(routing)][application][scenario][phone] = falsed
+  accuracies[routingNum.index(routing)][application][scenario][phone] = accuracy if float(accuracy) != 0 else ""
+  misses[routingNum.index(routing)][application][scenario][phone] = missed if float(missed) != 100 else ""
+  falses[routingNum.index(routing)][application][scenario][phone] = falsed if float(falsed) != 100 else ""
   dCorrect[routingNum.index(routing)][application][scenario][phone] = ddCorrect
   dMissed[routingNum.index(routing)][application][scenario][phone] = ddMissed
   dFalse[routingNum.index(routing)][application][scenario][phone] = ddFalse
