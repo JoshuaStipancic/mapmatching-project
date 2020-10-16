@@ -123,7 +123,7 @@ mm.SpatialPointsDataFrame <- function(traj, plot = FALSE, DRN = NULL, err_region
       edit_traj$OSM_ID[j] <- edit_traj$OSM_ID[j - 1]
       #pt_index <- pt_index + 1
     } else {
-      current_link <- smp2(edit_traj, roads, current_link, j, err_region)
+      current_link <- smp2(edit_traj, roads, current_link, j, 100)#err_region)
       edit_traj$coords.x1[j] <- current_link$NP_x
       edit_traj$coords.x2[j] <- current_link$NP_y
       edit_traj$OSM_ID[j] <- E(roads@g)[current_link$edge_id]$name

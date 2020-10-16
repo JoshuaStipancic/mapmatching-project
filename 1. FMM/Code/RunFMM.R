@@ -113,7 +113,7 @@ source("1. FMM/Code/FIS3.R")
 #   filepath = file.path("1. FMM/Results", substring(filename, first + 1, last))
 #   output = substring(filename, unlist(gregexpr("/", filename))[length(unlist(gregexpr("/", filename)))]+1)
 #   output = str_replace(output, ".xlsx", ".csv")
-#     
+# 
 #   # Create the directory (if necessary) and save the output files
 #   dir.create(filepath, recursive=TRUE)
 #   # Regular output
@@ -129,7 +129,7 @@ source("1. FMM/Code/FIS3.R")
 # Run code for AutoMerit data #
 ###############################
  
-# for(filename in Sys.glob("Data/*/*/3AutoMerit/*.xlsx"))
+# for(filename in Sys.glob("Data/Scenario 6/*/3AutoMerit/*.xlsx"))
 # {
 # 
 #   # Read one file
@@ -173,7 +173,7 @@ source("1. FMM/Code/FIS3.R")
 #   flag <- TRUE
 #   matched_traj <- tryCatch(mm(spdf, plot = FALSE), error=function(e) flag<<-FALSE)
 #   if (!flag) next
-# 
+#                            
 #   # Calculation of run time for trip
 #   end_time <- Sys.time()
 #   Time_T <- unclass(end_time) - unclass(start_time)

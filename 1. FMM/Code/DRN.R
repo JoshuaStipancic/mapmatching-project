@@ -35,7 +35,7 @@ create_drn <- function(bbox) {
   # filtering data than the the OSM API
   url <- paste0("http://www.overpass-api.de/api/xapi?way[bbox=",x1,",",y1,",",x2,",",y2,"][highway=*]")  
   response <- RCurl::getURL(url, .encoding = "UTF-8")
-  
+
   if (!requireNamespace("XML", quietly = TRUE))
 	stop("package XML required")
   # Parse Data
